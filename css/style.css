@@ -1,0 +1,348 @@
+/* Empty. Add your own CSS if you like */
+.bar.bar-dark{background-color: #000;}
+.logo img{    height: 100%;
+    width: 74%;}
+    img{max-width: 100%; height: auto;}
+    .banner{float: left; width: 100%;     /*margin-top: 44px;*/}
+    .triviatexr{   /* padding: 10px;*/
+    background: #ff0126;
+    color: #fff;
+    float: left;
+    width: 100%;
+    }
+    .bggrey{background: #eee;}
+
+    .triviatexr span{font-size: 18px;     line-height: 24px;
+}
+.triviatexr .col{padding-bottom: 0;}
+    .pageHead{color: #000;        padding:0px;
+      
+    }
+    .pageHead .row{padding-top: 0;}
+    .pageHead h3.ptitle{color: #000; margin-bottom: 0;     margin-top: 10px;}
+    .pageHead h3.ptitle span{    font-size: 20px;
+    	border-bottom: 3px #ff0126 solid;
+    font-weight: normal;
+    }
+    .tmslogo{background: url(../img/times-logo.png) center center no-repeat;     background-size: auto 100%; }
+    .hitachilogo{background: url(../img/hitachi-logo.png) center center no-repeat;     background-size: auto 100%;}
+    .Ncontent{ /*padding:15px 15px 60px 15px;*/     padding: 10px 10px 60px 10px; clear: both;}
+    .Ncontent p{text-align: justify;}
+
+    .sendquery{     bottom: 10px;
+    position: fixed;
+    left: 10px;
+    font-size: 30px;
+    color: #fff;
+    background: #ff0126;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    text-align: center;
+    box-shadow: 0 0 8px rgba(0,0,0,0.8);
+    line-height: 50px; z-index: 9999999999999;}
+
+    .chatbtn{
+      bottom: 10px;
+    position: fixed;
+    right: 10px;
+    font-size: 30px;
+    color: #fff;
+    background: #ff0126;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    text-align: center;
+    box-shadow: 0 0 8px rgba(0,0,0,0.8);
+    line-height: 50px; z-index: 99999;
+    }
+    .menu{background-color: #ff0126;}
+    .item-complex .item-content, .item-radio .item-content,.item,.bar.bar-stable.menuhead{background-color:transparent;}
+
+    .menuhead{ padding: 10px 15px;  height: 120px;}
+.top150{top: 130px;}
+.menu .item{border-color: transparent; color:#fff;}
+.item-complex .item-content, .item-radio .item-content,.ntlink{padding: 10px 49px 10px 16px; font-weight: normal;}
+.item-complex .item-content:hover, .item-radio .item-content:hover,.ntlink:hover{
+	background-color: #ea6165;
+}
+.mclose{
+	position: absolute;
+    right: 10px;
+    top: 0;
+    font-size: 35px;
+    color: #000; cursor: pointer;
+}
+.tabview{     
+    width: 100%;
+    list-style: none;
+    padding: 0;
+    display: table;
+   
+
+}
+.tabview li{ 
+    position: relative;
+    background: #eee;
+    display: table-cell;
+    width: 25%;
+    height: 56px;
+    text-align: center;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    vertical-align: middle;
+    border: 2px #fff solid;
+}
+.tabview li span{
+	display: block; 
+      padding: 8px 0;
+ }
+.tabview li.active{background: #ff0126; color: #fff;}
+.tabcontent{  
+    padding: 10px;
+    margin: 15px 2px;}
+.tabc span{border-bottom: 2px #ff0126 solid;}
+.clearfix{padding: 0;margin: 0; clear: both;}
+.mtm5{margin-top: -5px;}
+.profileico{
+    border: 3px #eee solid;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+    border-radius: 50%;
+    /* padding-top: 50%; */
+    width: 70px;
+    height: 70px;
+    margin: 0 auto;
+    background-color: #eee;
+}
+p.prtext{    font-size: 12px;     margin-top: 5px;
+    text-align: center;
+    line-height: 15px; margin-bottom: 20px;}
+p.prtext span{font-weight: bold; display: block; font-size: 13px;}
+
+  .p0{padding: 0;}
+  .mt20{margin-top:20px;}
+  .mt10{margin-top:10px;}
+  .cstmodal{background-color: rgba(0,0,0,0.7); color: #fff;}
+  .loginbox{position: absolute; top: 50%; margin-top: -100px; 
+  	background: #fff;  width: 80%; left: 10%; padding: 10px;
+  }
+  .txtcenter{text-align: center;}
+  .txtleft,p.txtleft{text-align: left;}
+  .txtright{text-align: right;}
+  .sfont{font-size: 13px;}
+  .regform{margin:30px 5%;}
+  .regform .item-input{margin-bottom: 10px;}
+  .undline{border-bottom: 3px #ff0126 solid;}
+  .brd-r0{border-radius: 0;}
+  .nttext{color: #e11c23;}
+.cradio{margin-bottom: 10px;}
+.cradio .item{border-color: #fff; border:0;}
+.cradio .item-radio .radio-icon{left: 0; right: inherit;}
+.cradio .item-radio .item-content{     padding: 7px 10px 7px 43px;}
+.cradio .item-radio .radio-icon{    border: 1px #eee solid;     padding: 0px 7px;}
+.cradio .item-radio input:checked + .radio-content .item-content{background: none;}
+.cradio .radio-content:before{
+  content: ""; display: block; position: absolute; 
+ height: 100%; 
+   border:1px #eee solid; padding: 3px 17px;
+}
+
+
+
+.cradiolabel{margin:20px 0 15px 0;}
+h5, .h5 {
+    font-size: 16px;
+}
+.button.button-assertive{background-color: #ff0126;}
+.promo-full{background: #eee; padding: 20px 0;}
+.p10{padding: 10px;}
+.mtb15{margin: 15px 0;}
+.fred{color:#ff0126;}
+.fblack{color:#212121;}
+.fbold{font-weight: bold;}
+.fgreen{color:green;}
+form[name="register"] small{padding-right: 10px;}
+.curpoint{cursor: pointer;}
+.schedulecard{}
+.schedulecard .item{
+    font-size: 14px;
+    text-overflow: inherit;
+    overflow: inherit;
+    white-space: inherit;
+
+}
+
+.loading-container .loading{}
+.userinfo{    text-transform: capitalize;
+  padding: 10px;
+    background-color: #000000;
+    color: #fff;
+    margin-top: 0;}
+.nav-bar-title{text-transform: capitalize;}
+.colist{}
+
+.colist ol li{    border-bottom: 1px #ddd solid;
+    padding: 10px 0;}
+    .colist ol li:first-child{border-top: 1px #ddd solid;}
+marquee p{display: inline-block; font-size: 14px; margin:0; padding:0;}
+.ccard{margin:20px 0;}
+.cradio.plist{min-height: 40px; position: relative;}
+.ccard .item-divider{padding: 15px 10px;}
+.cradio.plist .item-radio .item-content{    padding: 5px 10px 5px 43px;}
+.cradio.plist .radio-content:before,.cradio.plist .item-radio .radio-icon{height: 40px;}
+.ccolr{background: #ff0126 !important; background-image:none !important;}
+.sessioname{    font-size: 14px;
+    font-weight: normal;}
+.button{border-radius: 0;}
+.pollscore{position: absolute; right: 0; font-size: 15px; background: #eee; padding: 4px; top: 5px; z-index: 9999;}
+
+.card .item{position: relative;}
+.overlay{    background: rgba(0,0,0,0);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 99;}
+
+.pollcont .item{     text-overflow: inherit !important;
+   white-space: inherit; !important; }
+
+
+
+
+
+   .successmsg{     min-height: 47px;
+    line-height: 47px;
+    text-align: center;
+    font-size: 16px;
+    color: #06b12e;
+    border: 1px #06b12e solid;
+    box-shadow: 0 -1px 0 #06b12e;
+}
+.errort{color:#f00; font-size: 13px;}
+
+
+/*Chat css start*/
+.chatdateleft{font-size: 11px; color: #fff; opacity: 0.8}
+.chatdateright{font-size: 11px; color: #000; opacity: 0.8}
+  .chatcontent .scroll {
+  padding: 10px 0 50px !important;
+}
+
+.chatcontent .messages {
+  display: -webkit-box !important;
+  display: -moz-box !important;
+  display: -ms-flexbox !important;
+  display: -webkit-flex !important;
+  display: flex !important;
+  -webkit-align-content: center !important;
+  -ms-flex-line-pack: center !important;
+  align-content: center !important;
+  -webkit-box-align: center !important;
+  -moz-box-align: center !important;
+  -webkit-align-items: center !important;
+  -ms-flex-align: center !important;
+  align-items: center !important;
+  margin-bottom: 0px !important;
+}
+.chatcontent .messages .message {
+  -webkit-box-flex: 1 !important;
+  -moz-box-flex: 1 !important;
+  -webkit-flex: 1 1 auto !important;
+  -ms-flex: 1 1 auto !important;
+  flex: 1 1 auto !important;
+  padding: 10px !important;
+  -webkit-transition: all 250ms ease-in-out !important;
+  transition: all 250ms ease-in-out !important;
+  overflow: hidden !important;
+  text-align: left !important;
+  -webkit-transform: translate3d(0, 0, 0) !important;
+  -moz-transform: translate3d(0, 0, 0) !important;
+  transform: translate3d(0, 0, 0) !important;
+}
+
+.chatcontent .time {
+  -webkit-box-flex: 0 !important;
+  -moz-box-flex: 0 !important;
+  -webkit-flex: 0 1 auto !important;
+  -ms-flex: 0 1 auto !important;
+  flex: 0 1 auto !important;
+  -webkit-align-self: auto !important;
+  -ms-flex-item-align: auto !important;
+  align-self: auto !important;
+  width: 120px !important;
+  text-align: center !important;
+  padding: 0 0 0 0 !important;
+  -webkit-transition: all 250ms ease-in-out !important;
+  transition: all 250ms ease-in-out !important;
+  -webkit-transform: translate3d(10px, 0, 0) !important;
+  -moz-transform: translate3d(10px, 0, 0) !important;
+  transform: translate3d(10px, 0, 0) !important;
+}
+.chatcontent .time.slide-right {
+  -webkit-transform: translate3d(130px, 0, 0) !important;
+  -moz-transform: translate3d(130px, 0, 0) !important;
+  transform: translate3d(130px, 0, 0) !important;
+}
+
+.chatcontent .messages.other .message {
+  -webkit-transform: translate3d(0, 0, 0) !important;
+  -moz-transform: translate3d(0, 0, 0) !important;
+  transform: translate3d(0, 0, 0) !important;
+  text-align: right !important;
+}
+.chatcontent .messages.other .message.slide-right {
+  -webkit-transform: translate3d(120px, 0, 0) !important;
+  -moz-transform: translate3d(120px, 0, 0) !important;
+  transform: translate3d(120px, 0, 0) !important;
+}
+.chatcontent .messages.other span {
+  color: black !important;
+  background-color: #C7C7CC !important;
+}
+
+.chatcontent span {
+  background:#ff0126 !important;
+  display: inline-block !important;
+  color: white !important;
+  padding: 10px !important;
+  border-radius: 10px !important;
+  text-align: left !important;
+ max-width: 90% !important;
+min-width: 180px;
+}
+
+
+
+.chatinput.bar.bar-stable,.chatinput.bar.bar-stable.bar-footer{background: #ff0126;     padding: 0 0 0px 1px;}
+.chatinput.bar-stable .button.button-clear{color: #fff; padding-right:15px; }
+.chatinput .bar-footer{height: auto;}
+.chatinput.bar.item-input-inset .item-input-wrapper input{padding: 20px;}
+.chatinput .item-input-wrapper{border-radius: 0;}
+.wfont{color: #fff;}
+.googlemap{height: 55vh; background: #eee; position: relative;}
+.googlemap iframe{position: absolute; width: 100%; height: 100%; left: 0;  top: 0;}
+
+/* end of Chat css start*/
+
+/***************** WP8 */
+@viewport
+{
+width:350px;
+}
+
+@-ms-viewport {
+width:350px;
+zoom-user:fixed;
+max-zoom:1;
+min-zoom:1;
+}
+body, html {
+  -ms-overflow-style: none !important;
+}
+
+/***************** */

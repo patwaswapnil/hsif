@@ -1,0 +1,79 @@
+<ion-view>
+ <ion-nav-title>HSIF 2016</ion-nav-title>
+  <ion-content>
+  <div class="banner home">
+  	<img src="img/banner.jpg"  alt="" />
+  </div>
+  <div class="clearfix"></div>
+  <div class="row">
+    <div class="col col-40 mt10">
+    <img src="img/logo-dark.png"  alt="" />
+    </div>
+    <div class="col col-20"></div>
+    <div class="col col-40 txtright">
+   <img src="img/times-network-logo.png"  alt="" />
+    </div>
+  </div>
+  <div class="pageHead">
+    <div class="row">
+      <div class="col col-100"><h3 class="ptitle txtleft"><span>Trivia</span></h3></div>
+      
+    </div>
+  </div>
+
+
+
+    <div class="Ncontent">
+         <ul class="tabview">
+            <li ng-repeat="tab in tabs" 
+                ng-class="{active:isActiveTab(tab.url)}" 
+                ng-click="onClickTab(tab)"><span>{{tab.stitle}}</span></li>
+        </ul>
+        <div id="mainView">
+            <div ng-include="currentTab"></div>
+        </div>
+
+
+
+
+
+
+    </div>
+  </ion-content>
+
+<div class="bar-footer">
+<a href="#/app/queries"><div class="sendquery ion-help"></div></a>
+<a href="javascript:void(0)" ng-click="checkuserlogin('chatlist');"><div class="chatbtn ion-chatbubble"></div></a>
+</div>
+
+
+    <script type="text/ng-template" id="trivia-datasolution.html">
+    <div class="tabcontent inapplink" ng-controller="triviaDatasolutionCtrl">
+    <div ng-bind-html="triviadatasolution" class="colist"></div>
+    </div>
+   </script>
+
+
+
+    <script type="text/ng-template" id="trivia-railway.html">
+    <div class="tabcontent inapplink" ng-controller="triviaRailwayCtrl">
+    <div ng-bind-html="triviaRailway" class="colist"></div>
+    </div>
+   </script>
+
+    <script type="text/ng-template" id="trivia-itsolution.html">
+    <div class="tabcontent inapplink" ng-controller="triviaItsolutionCtrl">
+       <div ng-bind-html="triviIt" class="colist"></div>
+    
+    </div>
+  </script>
+
+    <script type="text/ng-template" id="trivia-payment.html">
+     <div class="tabcontent inapplink" ng-controller="triviaPaymentCtrl">
+    <div ng-bind-html="triviaPayment" class="colist"></div>
+        </div>
+    
+    </div>
+  </script>
+
+</ion-view>

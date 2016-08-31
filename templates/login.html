@@ -1,0 +1,39 @@
+<ion-view>
+ <ion-nav-title>HSIF 2016</ion-nav-title>
+
+  <content has-header="true" padding="true">
+
+
+     <h3 class="txtcenter" style="margin-top:20%;"><span class="undline">Login</span></h3>
+          <div class="loginbox">
+
+
+          <form name="nlogin" ng-submit="loginaction(loginData)">
+            <div class="list">
+              <label class="item item-input">
+                
+                <input type="email" name="username" placeholder="Email" ng-model="loginData.username" required="">
+
+              </label>
+              <label class="item item-input">
+                <input type="password" placeholder="Password" ng-model="loginData.password" name="password" required="">
+              </label>
+              
+                <button type="submit" class="button button-block button-assertive brd-r0" ng-disabled="nlogin.$invalid">Log in</button>
+             
+            </div>
+          </form>
+
+          <p class="fblack">New User? <a href="#/app/register">Register</a></p>
+
+         <p class="fred" ng-if="loginerror">Your email address or password is incorrect please check and try again </p>
+
+          </div>
+
+          
+
+ 
+        </content>
+
+
+</ion-view>

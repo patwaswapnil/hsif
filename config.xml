@@ -1,0 +1,44 @@
+<widget xmlns   = "http://www.w3.org/ns/widgets"
+        xmlns:gap   = "http://phonegap.com/ns/1.0"
+        id          = "com.infini.timesnetwor0"
+ 1      versionCode = "10"
+        version     = "0.0.1" >
+
+    <preference name="phonegap-version" value="cli-6.0.0" />
+ 
+    <preference name="fullscreen" value="true" /> 
+    <!-- versionCode is optional and Android only -->
+    <platform name="winphone" />
+    <author>Infini Systems Pvt Ltd</author>
+    <preference name="windows-identity-name" value="InfiniSystemsPvtLtd.HSIF2016India" />
+    <!-- Windows 8.1: -->
+    <!-- Windows 10 (default): -->
+    <!--    <preference name="windows-appx-target" value="uap" />
+     Windows 8.1: 
+    <preference name="windows-appx-target" value="8.1-win" />-->
+    <!-- Windows Phone 8.1: -->
+    <preference name="windows-appx-target" value="8.1-phone" />
+ <description>
+      Hitachi Social Innovation forum 2016
+    </description>
+
+
+
+    <name>HSIF 2016 India</name>
+
+    <access origin="*" />
+    <plugin name="cordova-plugin-console" spec="1.0.3" />
+    <plugin name="cordova-plugin-device" spec="1.1.2" />
+    <plugin name="cordova-plugin-splashscreen" spec="3.2.2" />
+    <plugin name="cordova-plugin-statusbar" spec="2.1.3" />
+    <plugin name="cordova-plugin-whitelist" spec="1.2.2" />
+    <plugin name="cordova-plugin-device-motion" spec="1.2.1" />
+    <plugin name="ionic-plugin-keyboard" spec="2.2.1" />
+
+    
+    <!-- <src="ApplicationIcon.png" width="99" height="99" platform="winphone"/> -->
+    <icon src="Background.png"  platform="winphone"/>
+    <splash src="SplashScreenImage.png"  platform="winphone"/>
+
+
+</widget>

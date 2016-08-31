@@ -1,0 +1,77 @@
+<ion-view>
+    <ion-nav-title>HSIF 2016</ion-nav-title>
+  <ion-content>
+    <div class="Ncontent">
+
+<div class="regform">
+    <h3 class="txtcenter"><span class="undline">Register</span></h3>
+  <h4 class="txtcenter mt20">
+      Please fill out the form below to <br/>
+      start chatting with other users of this APP
+      </h4>
+<h5 class="fred txtcenter" ng-if="rerror">{{rerror}}</h5>
+  <div class="list mt20">
+  <form name="register" ng-submit="submitform(reg)" novalidate>
+  <label class="item item-input">
+    <input type="text" placeholder="Full Name*" name="firstname" ng-model="reg.firstname"  required="">
+     <small ng-show="register.$submitted || register.firstname.$touched">
+      <span ng-show="register.firstname.$error.required" class="ion-alert-circled"></span>
+    </small>
+  </label>
+
+  <label class="item item-input">
+    <input type="text" placeholder="Company*" name="companyname" ng-model="reg.companyname" value="" required="">
+    <small ng-show="register.$submitted || register.companyname.$touched">
+      <span ng-show="register.companyname.$error.required"  class="ion-alert-circled"></span>
+    </small>
+  </label>
+   <label class="item item-input">
+    <input type="text" placeholder="Designation*" name="designation" ng-model="reg.designation" value="" required="">
+     <small ng-show="register.$submitted || register.designation.$touched">
+      <span ng-show="register.designation.$error.required"  class="ion-alert-circled"></span>
+    </small>
+  </label>
+
+<!-- 	<label class="item item-input">
+    <input type="text" placeholder="Designation">
+  </label> -->
+	<label class="item item-input">
+    <input type="email" placeholder="Email*"  name="useremail" ng-model="reg.useremail" required="" >
+      <small>
+      <span ng-show="form.useremail.$error.required"  class="ion-alert-circled">.</span>
+      <span ng-show="form.useremail.$error.email"  class="ion-alert-circled"></span>
+      </small>
+  </label>
+	<label class="item item-input">
+    <input type="text" placeholder="Phone*" name="phone" ng-model="reg.phone" required="">
+     <small ng-show="register.$submitted || register.phone.$touched">
+      <span ng-show="register.phone.$error.required" class="ion-alert-circled"></span>
+    </small>
+  </label>
+
+    <label class="item item-input">
+    <input type="password" placeholder="Password*"  name="password" value="" ng-model="reg.password" required="">
+     <small ng-show="register.$submitted || register.password.$touched">
+      <span ng-show="register.password.$error.required" class="ion-alert-circled"></span>
+    </small>
+  </label>
+
+
+ <button  type="submit"  class="button button-block button-assertive brd-r0" ng-disabled="register.$invalid">
+   Submit
+ </button>
+ </form>
+</div>
+
+</div>
+
+
+    </div>
+    
+  </ion-content>
+
+<div class="bar-footer">
+<a href="#/app/queries"><div class="sendquery ion-help"></div></a>
+<a href="javascript:void(0)" ng-click="checkuserlogin('chatlist');"><div class="chatbtn ion-chatbubble"></div></a>
+</div>
+</ion-view>

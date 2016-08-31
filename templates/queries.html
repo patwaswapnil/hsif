@@ -1,0 +1,69 @@
+<ion-view>
+ <ion-nav-title>HSIF 2016</ion-nav-title>
+
+  <ion-content>
+  <div class="triviatexr">
+  <div class="row">
+  <div class="col col-25"><span>Trivia -</span></div>
+  <div class="col" ng-controller="triviaLatestCtrl">
+  <marquee scrollamount="5">
+<span ng-bind-html="triviItlatest"></span>
+ </marquee>
+  </div>
+  </div>
+  </div>
+
+<div class="Ncontent">
+
+<div class="">
+
+    <h3 class="txtcenter"><span class="undline">Query</span></h3>
+  <h4 class="txtcenter mt20">
+     Have a query regarding Hitachi Social Innovation Forum 2016!!! Submit Now! Be a part of this transformation
+      </h4>
+<div class="nttext txtcenter sfont">(Only HSIF related queries would be entertained)</div>
+<div class="fgreen txtcenter" ng-if="mailresult"><br/>{{mailresult}}</div>
+  <div class="list mt20">
+  <form name="querys" id="querys" ng-submit="sendemail(queryobj)">
+  <label class="item item-input">
+    <input type="text" placeholder="Full Name" name="fullname" ng-model="queryobj.fullname" required="">
+  </label>
+  <label class="item item-input">
+    <input type="email" placeholder="Email" name="useremail" ng-model="queryobj.useremail" required="">
+  </label>
+	<label class="item item-input">
+    <input type="text" placeholder="Phone" name="mobile" ng-model="queryobj.mobile" required="">
+  </label>
+  
+ <div class="cradiolabel"><h5>Query Related To</h5> </div>
+<div class="clearfix">
+<div class="cradio">
+ <ion-radio  name="query_related_to" ng-model="queryobj.query_related_to" ng-value="'session'">Session Topics </ion-radio>
+ </div>
+  <div class="cradio">
+ <ion-radio name="query_related_to" ng-model="queryobj.query_related_to" ng-value="'registration'">Registration </ion-radio>
+  </div>
+ </div>
+  <label class="item item-input mtb15">
+    <textarea type="text" placeholder="Query" name="query" ng-model="queryobj.query" required="" rows="4"></textarea>
+  </label>
+
+ <button type="submit" class="button button-block button-assertive brd-r0 mt10" ng-disabled="querys.$invalid">Submit</button>
+
+</form>
+</div>
+
+
+
+</div>
+
+
+    </div>
+    
+  </ion-content>
+
+<div class="bar-footer">
+
+<a href="javascript:void(0)" ng-click="checkuserlogin('chatlist');"><div class="chatbtn ion-chatbubble"></div></a>
+</div>
+</ion-view>

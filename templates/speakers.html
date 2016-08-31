@@ -1,0 +1,256 @@
+<ion-view>
+ <ion-nav-title>HSIF 2016</ion-nav-title>
+  <ion-content class="has-header>
+  <div class="banner">
+  	<img src="img/banner.jpg"  alt="" />
+  </div>
+
+  <div class="row">
+    <div class="col col-40 mt10">
+    <img src="img/logo-dark.png"  alt="" />
+    </div>
+    <div class="col col-20"></div>
+    <div class="col col-40 ">
+   <img src="img/times-network-logo.png"  alt="" />
+    </div>
+  </div>
+  <div class="pageHead">
+  	<div class="row">
+  	<div class="col col-100"><h3 class="ptitle txtleft"><span>Speakers</span></h3></div>
+  		
+  	</div>
+  </div>
+
+
+  <div class="clearfix"></div>
+    <div class="Ncontent">
+
+
+        <ul class="tabview">
+            <li ng-repeat="tab in tabs" 
+                ng-class="{active:isActiveTab(tab.url)}" 
+                ng-click="onClickTab(tab)"><span>{{tab.ptitle}}</span></li>
+        </ul>
+        <div id="mainView">
+            <div ng-include="currentTab"></div>
+        </div>
+ 
+
+
+    </div>
+  </ion-content>
+
+
+<div class="bar-footer">
+<a href="#/app/queries"><div class="sendquery ion-help"></div></a>
+<a href="javascript:void(0)" ng-click="checkuserlogin('chatlist');"><div class="chatbtn ion-chatbubble"></div></a>
+</div>
+
+
+
+<script type="text/ng-template" id="payment.html">
+		<div class="tabcontent p0">
+	
+		<div class="row">
+			<div class="col">
+				<div class="profileico" style="background-image:url(img/pay1.jpg);"></div>
+				<p class="prtext"><span>AP HOTA</span>
+				MD & CEO,<br/>
+				National Payments Corporation of India (NPCI)</p>
+			</div>
+			<div class="col">
+				<div class="profileico" style="background-image:url(img/pay2.jpg);"></div>
+				<p class="prtext"><span>SHINJINI KUMAR</span>
+				CEO,<br/>
+				Paytm Payments Bank </p>
+			</div>
+	</div>	
+
+			<div class="row">
+			<div class="col">
+				<div class="profileico" style="background-image:url(img/pay4.jpg);"></div>
+				<p class="prtext"><span>Ashwani Kumar</span>
+				Chairman & Managing Director, <br/>
+				Dena Bank, Indian Bank Association-Chairman</p>
+			</div>
+
+			<div class="col">
+				<div class="profileico" style="background-image:url(img/pay3.jpg);"></div>
+				<p class="prtext"><span>Jayant D’Mello</span>
+				Director,<br/>
+				ATM & Emerging Payments Business Unit,<br/> Hitachi Payment Services Pvt. Ltd</p>
+			</div>
+		
+	</div>		
+
+
+
+
+
+
+
+
+
+		</div>
+	</script>
+	
+	<script type="text/ng-template" id="railways.html">
+		<div class="tabcontent p0">
+			<div class="row">
+			<div class="col">
+				<div class="profileico" style="background-image:url(img/ral1.jpg);"></div>
+				<p class="prtext"><span>Smt. K. Vijayalakshmi</span>
+				Chief<br/>
+				Transport & Communications, MMRDA
+				</p>
+			</div>
+			<div class="col">
+				<div class="profileico" style="background-image:url(img/ral2.jpg);"></div>
+				<p class="prtext"><span>Prashant Rao</span>
+				Executive Director / S&T / Project<br/>
+				DMRC</p>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col">
+				<div class="profileico" style="background-image:url(img/ral3.jpg);"></div>
+				<p class="prtext"><span>Mangal Dev</span>
+				Director Hitachi India Pvt. Ltd & <br/>
+				Head of Hitachi Rail Systems Company, India and South Asia Region
+				</p>
+			</div>
+			<div class="col">
+				<div class="profileico" style="background-image:url(img/ral4.jpg);"></div>
+				<p class="prtext"><span>Bruno Tasselli</span>
+				Vice President, <br/>
+				Business Development and Sales, Hitachi Rail Italy</p>
+			</div>
+		</div>
+
+
+
+		</div>
+	</script>
+	
+	<script type="text/ng-template" id="microclinic.html">
+			<div class="tabcontent p0">
+
+		<div class="row">
+			<div class="col">
+				<div class="profileico" style="background-image:url(img/it2.jpg);"></div>
+				<p class="prtext"><span>MRIDUL SHARMA</span>
+				EVP, Head Technology, IndusInd Bank </p>
+			</div>
+			<div class="col">
+				<div class="profileico" style="background-image:url(img/it1.jpg);"></div>
+				<p class="prtext"><span>VIKAS PRABHU</span>
+				CIO, <br/>
+				Essar Energy & Oil</p>
+			</div>
+		</div>	
+
+
+		<div class="row">
+			<div class="col">
+				<div class="profileico" style="background-image:url(img/it3.jpg);"></div>
+				<p class="prtext"><span>Bishwanath Ghosh</span>
+				Corporate CIO,<br/>
+				Mahindra and Mahindra
+
+				 </p>
+			</div>
+			<div class="col">
+				<div class="profileico" style="background-image:url(img/it5.jpg);"></div>
+				<p class="prtext"><span>Vinay Khargonkar</span>
+				General Manager and Head - Corporate IT, <br/>
+				L&T
+
+				 </p>
+			</div>
+
+		
+		</div>
+
+
+
+			<div class="row">
+				<div class="col">
+				<div class="profileico" style="background-image:url(img/it4.jpg);"></div>
+				<p class="prtext"><span>Anuj Gupta</span>
+				CEO, <br/>
+				Hitachi Systems Micro Clinic</p>
+			</div>
+			<div class="col">
+				
+			</div>
+		</div>
+		</div>
+	</script>
+
+
+
+		<script type="text/ng-template" id="hitachidata.html">
+		<!-- Hitachi Data Solutions -->
+		<div class="tabcontent p0">
+		<div class="row">
+			<div class="col">
+				<div class="profileico" style="background-image:url(img/ds1.jpg);"></div>
+				<p class="prtext"><span>AMIT SETHI</span>
+				President & CIO,<br/>
+				Axis Bank</p>
+			</div>
+
+			<div class="col">
+			<div class="profileico" style="background-image:url(img/ds4.jpg);"></div>
+			<p class="prtext"><span>Ravi Viswanathan</span>
+			President, Growth Markets,<br/>
+			Tata Consultancy Services</p>
+			</div>
+		</div>	
+		<div class="row">
+			<div class="col">
+				<div class="profileico" style="background-image:url(img/ds3.jpg);"></div>
+				<p class="prtext"><span>Anup Purohit</span>
+				Senior President & CIO, <br/>
+				YES Bank</p>
+			</div>
+				<div class="col">
+				<div class="profileico" style="background-image:url(img/ds5.jpg);"></div>
+				<p class="prtext"><span>Munish Mittal</span>
+				CIO, <br/>
+				HDFC Bank</p>
+			</div>
+		</div>	
+		<div class="row">
+		
+			<div class="col">
+				<div class="profileico" style="background-image:url(img/ds2.jpg);"></div>
+				<p class="prtext"><span>Shivkumar Bhasin</span>
+				CTO, <br/>
+				SBI</p>
+			</div>
+
+			<div class="col">
+				<div class="profileico" style="background-image:url(img/ds6.jpg);"></div>
+				<p class="prtext"><span>Vivekanand Venugopal</span>
+				VP & General Manager, India, <br/>
+				 Hitachi Data Systems</p>
+			</div>
+	</div>	
+
+</div>
+	</script>
+	
+
+
+
+
+
+
+
+
+
+
+</ion-view>
+

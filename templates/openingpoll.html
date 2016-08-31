@@ -1,0 +1,105 @@
+ <ion-view>
+ <ion-nav-title>HSIF 2016</ion-nav-title>
+  <ion-content>
+
+  <div ng-show="pollstatic">
+  <div class="banner home">
+    <img src="img/banner.jpg"  alt="" />
+  </div>
+  <div class="clearfix"></div>
+  <div class="row">
+    <div class="col col-40 mt10">
+    <img src="img/logo-dark.png"  alt="" />
+    </div>
+    <div class="col col-20"></div>
+    <div class="col col-40 txtright">
+   <img src="img/times-network-logo.png"  alt="" />
+    </div>
+  </div>
+
+  <div class="pageHead">
+    <div class="row">
+      <div class="col col-100"><h3 class="ptitle txtleft"><span>Opening Poll</span></h3></div>
+      
+    </div>
+  </div>
+  <div class="Ncontent">
+   <br/>
+       <p>Polling will be live on the day of the event. Don’t miss the opportunity to make yourself count. </p>
+            <p>Stay Tuned!</p>
+     </div>
+
+  </div>
+  
+
+
+<div ng-hide="pollstatic">
+<div class="triviatexr">
+  <div class="row">
+  <div class="col col-25"><span>Trivia -</span></div>
+  <div class="col" ng-controller="triviaLatestCtrl">
+  <marquee scrollamount="5">
+  <span ng-bind-html="triviItlatest"></span>
+ </marquee>
+  </div>
+  </div>
+  </div>
+  <div class="clearfix"></div>
+  <div class="pageHead">
+    <div class="row">
+      <div class="col col-100"><h3 class="ptitle txtleft"><span>Opening Poll</span></h3></div>
+     </div>
+  </div>
+<h5 class="txtcenter fgreen" ng-if="result"> {{result}} </h5>
+
+    <div class="Ncontent pollcont">
+     <ion-list>
+       
+        <div class="card ccard" ng-repeat="qt in polld">
+        <form name="test{{$parent.$index}}" >
+          <div class="item item-divider">
+          {{ qt.title }}<br/>
+          <span class="sessioname">{{qt.session_name}} </span>
+          </div>
+
+          <div class="item item-text-wrap" id="qnp_{{qt.id}}">
+           <span id="err_{{qt.id}}" class="errort"></span>
+            <div class="cradio plist" ng-repeat="opt in qt.options" ng-init="data" ng-if="opt.id!=''">
+           <ion-radio name="test{{$parent.$index}}" ng-model="ans[qt.id]" ng-value="'{{opt.id}}'" ng-class="qt.participant=='invalid' ? 'test':''">{{opt.option}} </ion-radio>
+          
+           <div id="per_{{qt.id}}_{{opt.id}}">{{per}}</div>
+           <div class="pollscore" ng-if="qt.participant=='invalid'">{{opt.per}}</div>
+             </div>
+             <div class="overlay" ng-if="qt.participant=='invalid'" > </div>
+
+          </div> 
+
+
+          <button type="button" class="button button-outline button-positive bar" ng-click="pollsubmit(ans[qt.id], qt.id)" id="qn_{{qt.id}}" ng-if="qt.participant=='valid'">Submit </button>
+
+          <div class="successmsg" ng-if="qt.participant=='invalid'">Thank you. Your vote submitted successfully</div> 
+         </form>
+        </div>
+    
+ </ion-list>
+ </div>
+ </div>
+
+
+
+
+
+
+
+
+  </ion-content>
+
+
+<div class="bar-footer" ng-show="pollstatic">
+<a href="#/app/queries"><div class="sendquery ion-help"></div></a>
+<a href="javascript:void(0)" ng-click="checkuserlogin('chatlist');"><div class="chatbtn ion-chatbubble"></div></a>
+</div>
+</ion-view> 
+
+
+

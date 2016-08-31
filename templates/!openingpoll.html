@@ -1,0 +1,57 @@
+<ion-view>
+ <ion-nav-title>HSIF 2016</ion-nav-title>
+
+ <form ng-submit="pollsubmit(ans)">
+  <ion-content>
+      <div class="triviatexr">
+  <div class="row">
+  <div class="col col-25"><span>Trivia -</span></div>
+  <div class="col" ng-controller="triviaLatestCtrl">
+  <marquee scrollamount="5">
+<span ng-bind-html="triviItlatest"></span>
+ </marquee>
+  </div>
+  </div>
+  </div>
+
+
+
+  <div class="clearfix"></div>
+
+
+
+  <div class="pageHead">
+    <div class="row">
+      <div class="col col-100"><h3 class="ptitle txtleft"><span>Opening Poll</span></h3></div>
+     </div>
+  </div>
+<h5 class="txtcenter fgreen" ng-if="result"> {{result}} </h5>
+
+    <div class="Ncontent">
+    
+        
+      <ion-list >
+        <div class="card ccard" ng-repeat="qt in polld">
+          <div class="item item-divider">
+          {{ qt.title }}
+          <input type="hidden">
+          </div>
+          <div class="item item-text-wrap">
+            <div class="cradio plist" ng-repeat="opt in qt.options" ng-init="data">
+           <ion-radio name="test{{$parent.$index}}" ng-model="ans[qt.id]" ng-value="'{{opt.id}}'">{{opt.option}} </ion-radio>
+          
+           </div>
+     
+          </div>   
+        </div>
+        </ion-list>
+
+
+    </div>
+  </ion-content>
+
+<button type="submit" class="bar bar-footer bar-assertive ccolr">
+  <div  class="title">Submit</div>
+</button>
+</form>
+</ion-view>

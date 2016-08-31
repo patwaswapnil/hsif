@@ -1,0 +1,27 @@
+<ion-view>
+ <ion-nav-title>User List</ion-nav-title>
+
+    <ion-content>
+   
+<div class="list list-inset">
+  <label class="item item-input">
+    <i class="icon ion-search placeholder-icon"></i>
+    <input type="text" placeholder="Search" ng-model="usearch">
+  </label>
+</div>
+
+
+
+      <div class="list">
+        <div ng-repeat="user in userdata | filter:usearch" >
+            <a href="#/app/chat/{{user.ID}}" class="item" >
+            {{user.fullname}}<br/>
+          
+           <small ng-if="user.companyname && user.designation">{{user.designation}} - {{user.companyname}} </small> 
+            </a>
+            
+        </div>
+      </div>
+  
+    </ion-content>
+</ion-view>
