@@ -35,13 +35,8 @@
     <plugin name="cordova-plugin-device-motion" spec="1.2.1" />
     <plugin name="ionic-plugin-keyboard" spec="2.2.1" />
 
-
-    <icon platform="winphone" width="150" height="150" src="res/icon150.png" />
-
-    <icon platform="winphone" width="310" height="150" src="res/icon310.png" />
-
-    <icon platform="winphone" width="50"  height="50"  src="res/icon.png" />
-
+    
+    <icon src="icon.png"  platform="winphone"/>
     <splash src="splash.png"  platform="winphone"/>
 
 
