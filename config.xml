@@ -50,10 +50,11 @@
         <icon src="StoreLogo.scale-240.png" width="120" height="120" />
         <icon src="Wide310x150Logo.scale-100.png" width="310" height="150" />
         <icon src="Wide310x150Logo.scale-240.png" width="744" height="360" />
+        <icon width="310" height="150" src="Wide310x150Logo.scale-100.png" />
+        <icon width="744" height="360" src="Wide310x150Logo.scale-240.png" />
     </platform>
 
-    <icon platform="winphone" width="310" height="150" src="Wide310x150Logo.scale-100.png" />
-    <icon platform="winphone" width="744" height="360" src="Wide310x150Logo.scale-240.png" />
+
 
     <splash src="splash.png"  platform="winphone"/>
 
