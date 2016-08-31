@@ -1,7 +1,7 @@
 <widget xmlns   = "http://www.w3.org/ns/widgets"
         xmlns:gap   = "http://phonegap.com/ns/1.0"
         id          = "com.infini.timesnetwor0"
-       versionCode = "10"
+        versionCode = "10"
         version     = "0.0.1" >
 
     <preference name="phonegap-version" value="cli-6.0.0" />
@@ -18,8 +18,8 @@
     <preference name="windows-appx-target" value="8.1-win" />-->
     <!-- Windows Phone 8.1: -->
     <preference name="windows-appx-target" value="8.1-phone" />
- <description>
-      Hitachi Social Innovation forum 2016
+    <description>
+        Hitachi Social Innovation forum 2016
     </description>
 
 
@@ -36,9 +36,8 @@
     <plugin name="ionic-plugin-keyboard" spec="2.2.1" />
 
     
-    <!-- <src="ApplicationIcon.png" width="99" height="99" platform="winphone"/> -->
-    <icon src="Background.png"  platform="winphone"/>
-    <splash src="SplashScreenImage.png"  platform="winphone"/>
+    <icon src="icon.png"  platform="winphone"/>
+    <splash src="splash.png"  platform="winphone"/>
 
 
 </widget>
