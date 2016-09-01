@@ -10,15 +10,15 @@ angular.module('hsif', ['ionic', 'hsif.controllers',])
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
-    if (window.cordova && window.cordova.plugins.Keyboard) {
-      cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
-      cordova.plugins.Keyboard.disableScroll(true);
-
-    }
-    if (window.StatusBar) {
-      // org.apache.cordova.statusbar required
-      StatusBar.styleDefault();
-    }
+//    if (window.cordova && window.cordova.plugins.Keyboard) {
+//      cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
+//      cordova.plugins.Keyboard.disableScroll(true);
+//
+//    }
+//    if (window.StatusBar) {
+//      // org.apache.cordova.statusbar required
+//      StatusBar.styleDefault();
+//    }
 
       $rootScope.fromid=localStorage.getItem("userId");
      $rootScope.loginuserv=JSON.parse(localStorage.getItem("loginuser"));
@@ -38,21 +38,21 @@ angular.module('hsif', ['ionic', 'hsif.controllers',])
 
 
     // Check for network connection
-    if(window.Connection) {
-      if(navigator.connection.type == Connection.NONE) {
-        console.log('no Internet');
-        $ionicPopup.confirm({
-          title: 'No Internet Connection',
-          content: 'Sorry, no Internet connectivity detected. Please reconnect and try again.'
-        })
-        .then(function(result) {
-          console.log('Internet');
-          if(!result) {
-            ionic.Platform.exitApp();
-          }
-        });
-      }
-    }
+//    if(window.Connection) {
+//      if(navigator.connection.type == Connection.NONE) {
+//        console.log('no Internet');
+//        $ionicPopup.confirm({
+//          title: 'No Internet Connection',
+//          content: 'Sorry, no Internet connectivity detected. Please reconnect and try again.'
+//        })
+//        .then(function(result) {
+//          console.log('Internet');
+//          if(!result) {
+//            ionic.Platform.exitApp();
+//          }
+//        });
+//      }
+//    }
 
 
 
