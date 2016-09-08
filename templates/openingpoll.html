@@ -1,5 +1,11 @@
  <ion-view>
  <ion-nav-title>HSIF 2016</ion-nav-title>
+<ion-nav-buttons side="right">
+        <button class="button icon ion-refresh" ng-click="reloadresult()">
+ </button>
+</ion-nav-buttons>
+
+
   <ion-content>
 
   <div ng-show="pollstatic">
@@ -77,7 +83,16 @@
 
           <button type="button" class="button button-outline button-positive bar" ng-click="pollsubmit(ans[qt.id], qt.id)" id="qn_{{qt.id}}" ng-if="qt.participant=='valid'">Submit </button>
 
-          <div class="successmsg" ng-if="qt.participant=='invalid'">Thank you. Your vote submitted successfully</div> 
+          <div  ng-if="qt.participant=='invalid'" >
+          <!-- Thank you. Your vote submitted successfully -->
+            <div class="successmsg" ng-click="reloadresult()">View Updated Results</div>
+         </div> 
+
+      <!-- Thank you. Your vote submitted successfully -->
+            <div class="successmsg polbtn" id="psub_{{qt.id}}"  ng-click="reloadresult()">View Updated Results</div>
+        
+
+
          </form>
         </div>
     
@@ -93,7 +108,6 @@
 
 
   </ion-content>
-
 
 <div class="bar-footer" ng-show="pollstatic">
 <a href="#/app/queries"><div class="sendquery ion-help"></div></a>

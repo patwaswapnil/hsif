@@ -3,13 +3,30 @@ angular.module('hsif.controllers', [])
 
 
 
-.controller('AppCtrl', function($scope, $ionicModal, $timeout) {
+.controller('AppCtrl', function($scope, $ionicModal, $timeout,$rootScope,$state) {
 
+      $rootScope.fromid=localStorage.getItem("userId");
+     $rootScope.loginuserv=JSON.parse(localStorage.getItem("loginuser"));
+      
+
+      $rootScope.checkuserlogin=function(ab){
+      console.log($rootScope.fromid);
+      if(!$rootScope.fromid){
+        console.log('abc');
+       $state.go('app.login');
+       
+      }else{
+         $state.go('app.'+ab);
+         console.log('xyz');
+      }
+      }
   })
 
 
-.controller('homeCtrl', function($scope,$state) {
-
+.controller('homeCtrl', function($scope,$state,$ionicNavBarDelegate) {
+$scope.$on('$ionicView.enter', function(e) {
+    $ionicNavBarDelegate.showBar(true);
+});
 })
 .controller('sessionsCtrl',  function($scope) {
   
@@ -68,6 +85,58 @@ angular.module('hsif.controllers', [])
         return tabUrl == $scope.currentTab;
     }
 }])
+
+
+
+.controller('speakPaymentCtrl', function($scope,$ionicLoading,$http){
+ $ionicLoading.show({template: 'Loading...'});
+  $http.get('http://times-hitachi.cruxservers.in/api/?method=getPage&id=123')
+.success(function(response){
+     $ionicLoading.hide();
+ // $scope.triviaRailway=response.content;
+  //console.log(response);
+     $scope.speakpayment = response.content;
+})
+})
+
+
+.controller('speakHdsCtrl', function($scope,$ionicLoading,$http){
+ $ionicLoading.show({template: 'Loading...'});
+  $http.get('http://times-hitachi.cruxservers.in/api/?method=getPage&id=135')
+.success(function(response){
+     $ionicLoading.hide();
+ // $scope.triviaRailway=response.content;
+ // console.log(response);
+     $scope.speakhds = response.content;
+})
+})
+
+
+.controller('speakMicroCtrl', function($scope,$ionicLoading,$http){
+ $ionicLoading.show({template: 'Loading...'});
+  $http.get('http://times-hitachi.cruxservers.in/api/?method=getPage&id=144')
+.success(function(response){
+     $ionicLoading.hide();
+ // $scope.triviaRailway=response.content;
+  //console.log(response);
+     $scope.speakmicroit = response.content;
+})
+})
+
+.controller('speakRailCtrl', function($scope,$ionicLoading,$http){
+ $ionicLoading.show({template: 'Loading...'});
+  $http.get('http://times-hitachi.cruxservers.in/api/?method=getPage&id=146')
+.success(function(response){
+     $ionicLoading.hide();
+ // $scope.triviaRailway=response.content;
+ // console.log(response);
+     $scope.speakrailway = response.content;
+})
+})
+
+
+
+
 .controller('abouthitachiCtrl', ['$scope', function($scope){
    
 }])
@@ -76,13 +145,21 @@ angular.module('hsif.controllers', [])
    
 }])
 
-.controller('openingpollCtrl', function($scope, $http,$ionicLoading){
+.controller('openingpollCtrl', function($scope, $http,$ionicLoading,$state,$ionicNavBarDelegate){
 //$scope.userid=localStorage.getItem("userId");
+$scope.$on('$ionicView.enter', function(e) {
+    $ionicNavBarDelegate.showBar(true);
+});
+$scope.reloadresult=function(){
+  $state.go($state.current, {}, {reload: true});
+}
+
+
 
 $scope.pollstatus="";
 $http.get('http://times-hitachi.cruxservers.in/api/?method=checkPollStatus')
 .success(function(response){
-  console.log("---"+response);
+ // console.log("---"+response);
  $scope.pollstatus=response
 
 if($scope.pollstatus=='true'){
@@ -134,30 +211,21 @@ $.each($scope.getpolldata,function(k,v){
 $.each(v,function(g,y){
 $('#per_'+k+'_'+y.id).text(y.per+'%');
 $('#per_'+k+'_'+y.id).addClass('pollscore');
-$('#qn_'+k).replaceWith('<div class="successmsg">Thank you. Your vote submitted successfully</div>');
+ // $('#qn_'+k).replaceWith('<div class="successmsg" ng-click="reloadresult()">Thank you. Your vote submitted successfully</div>');
+$('#qn_'+k).css('display','none');
+$('#psub_'+k).css('display','block');
+
 $('#qnp_'+k).append(' <div class="overlay"> </div>');
 
 console.log('#qn_'+k);
 
 });
 });
-
 console.log($scope.getpolldata)
-
-
   }, function errorCallback(response) {
     $ionicLoading.hide();
     $scope.result='Please try agail';
   });
-
-
-
-
-
-
-
-
-
 
 
 }
@@ -211,7 +279,7 @@ console.log($scope.getpolldata)
 .success(function(response){
      $ionicLoading.hide();
  // $scope.triviaRailway=response.content;
-  console.log(response);
+  //console.log(response);
      $scope.triviadatasolution = response.content;
 })
 })
@@ -223,7 +291,7 @@ console.log($scope.getpolldata)
 .success(function(response){
      $ionicLoading.hide();
  // $scope.triviaRailway=response.content;
-  console.log(response);
+ // console.log(response);
      $scope.triviaRailway = response.content;
 })
 })
@@ -239,7 +307,7 @@ console.log($scope.getpolldata)
 .success(function(response){
      $ionicLoading.hide();
  // $scope.triviaRailway=response.content;
-  console.log(response);
+  //console.log(response);
      $scope.triviIt = response.content;
 $timeout(function () {
  appbrowserlink();}, 1000);
@@ -252,7 +320,7 @@ $timeout(function () {
 .success(function(response){
      $ionicLoading.hide();
  // $scope.triviaRailway=response.content;
-  console.log(response.content);
+  //console.log(response.content);
      $scope.triviaPayment = response.content;
      $timeout(function () {
  appbrowserlink();}, 1000);
@@ -266,7 +334,7 @@ $timeout(function () {
 
   $http.get('http://times-hitachi.cruxservers.in/api/?method=latestInfo')
 .success(function(response){
-  console.log(response);
+ // console.log(response);
    $ionicLoading.hide();
      $scope.triviItlatest = response;
      $timeout(function () {
@@ -293,35 +361,20 @@ $timeout(function () {
 }])
 
 
-.controller('loginCtrl', function($scope,$state,$http,$window,$ionicHistory,$ionicLoading){
+.controller('loginCtrl', function($scope, $rootScope, $state, $http,$window,$ionicHistory,$ionicLoading){
  $scope.mclosemodal=function(){
   $scope.modal.hide();
 
     }
 
-//   $scope.doLogin=function(lg){
-//      $ionicLoading.show({template: 'Loading...'});
-//   $http({
-//   method:'POST',
-//   url:'http://times-hitachi.cruxservers.in/api/?method=checkLogin&useremail='+lg.username+'&password='+lg.password
-// }).success(function(response){
-//    $ionicLoading.hide();
-// console.log(response);
-// if(response!=false){
-//   $scope.ldata=response.data
-//  // console.log($scope.ldata.ID)
-//   $scope.modal.hide();
-//   localStorage.setItem('userId',$scope.ldata.ID);
-//   localStorage.setItem('loginuser',angular.toJson($scope.ldata));
+console.log($scope.fromid);
+if($scope.fromid){
+  $state.go('app.home',{},{reload: true});
+ // $ionicHistory.clearCache();
+  //$window.location.reload(true);
+}
 
-//     $window.location.reload(true)
-//     $state.go('app.home',{},{reload: true});
-//  }else{
-//   $scope.loginerror=true;
-//  }
 
-// })
-// }
 
   $scope.loginaction=function(lg){
      $ionicLoading.show({template: 'Loading...'});
@@ -336,9 +389,16 @@ if(response!=false){
  // console.log($scope.ldata.ID)
   localStorage.setItem('userId',$scope.ldata.ID);
   localStorage.setItem('loginuser',angular.toJson($scope.ldata));
-    $window.location.reload(true)
-   $state.go('app.home',{});
+  //$ionicHistory.clearCache()
+  // 
+
+     $state.go('app.home',{},{reload: true});
+    // $scope.$apply();
+     // $window.location.reload(true);
+ 
+
  }else{
+
   $scope.loginerror=true;
  }
 
@@ -358,9 +418,10 @@ $scope.gotopage=function(){
 })
 
 .controller('logoutctrl', function($scope,$state,$window){
+
   $scope.logout=function(){
     localStorage.clear();
-   $window.location.reload(true);
+  // $window.location.reload(true);
     $state.go('app.home',{},{reload: true});
     console.log('signout');
   }
@@ -381,7 +442,7 @@ $scope.gotopage=function(){
       if(response.data.data!=false){
        localStorage.setItem('userId',response.data.id);
        localStorage.setItem('loginuser',angular.toJson(reg));
-       $window.location.reload(true);
+      // $window.location.reload(true);
        $state.go('app.home',{},{reload: true});
        }else{
         $scope.rerror='Sorry, that username already exists!';
@@ -556,41 +617,41 @@ $http.get('http://times-hitachi.cruxservers.in/api/?method=getUser&id='+$scope.t
 
 
 
-.directive('input', function($timeout) {
-  return {
-    restrict: 'E',
-    scope: {
-      'returnClose': '=',
-      'onReturn': '&',
-      'onFocus': '&',
-      'onBlur': '&'
-    },
-    link: function(scope, element, attr) {
-      element.bind('focus', function(e) {
-        if (scope.onFocus) {
-          $timeout(function() {
-            scope.onFocus();
-          });
-        }
-      });
-      element.bind('blur', function(e) {
-        if (scope.onBlur) {
-          $timeout(function() {
-            scope.onBlur();
-          });
-        }
-      });
-      element.bind('keydown', function(e) {
-        if (e.which == 13) {
-          if (scope.returnClose) element[0].blur();
-          if (scope.onReturn) {
-            $timeout(function() {
-              scope.onReturn();
-            });
-          }
-        }
-      });
-    }
-  }
-})
+// .directive('input', function($timeout) {
+//   return {
+//     restrict: 'E',
+//     scope: {
+//       'returnClose': '=',
+//       'onReturn': '&',
+//       'onFocus': '&',
+//       'onBlur': '&'
+//     },
+//     link: function(scope, element, attr) {
+//       element.bind('focus', function(e) {
+//         if (scope.onFocus) {
+//           $timeout(function() {
+//             scope.onFocus();
+//           });
+//         }
+//       });
+//       element.bind('blur', function(e) {
+//         if (scope.onBlur) {
+//           $timeout(function() {
+//             scope.onBlur();
+//           });
+//         }
+//       });
+//       element.bind('keydown', function(e) {
+//         if (e.which == 13) {
+//           if (scope.returnClose) element[0].blur();
+//           if (scope.onReturn) {
+//             $timeout(function() {
+//               scope.onReturn();
+//             });
+//           }
+//         }
+//       });
+//     }
+//   }
+// })
 

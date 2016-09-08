@@ -1,4 +1,5 @@
-<ion-view  cache-view="false">
+<ion-view  cache-view="false" hide-nav-bar="false">
+
  <ion-nav-title>HSIF 2016</ion-nav-title>
   <ion-content>
   <div class="banner home">
@@ -6,14 +7,15 @@
   </div>
   <div class="clearfix"></div>
   <div class="triviatexr mtm5">
-  <div class="row">
+  <div class="row" ng-if="!fromid">
   <div class="col col-25"><span>Trivia -</span></div>
   <div class="col" ng-controller="triviaLatestCtrl">
   <marquee scrollamount="5">
-<span ng-bind-html="triviItlatest"></span>
+  <span ng-bind-html="triviItlatest"></span>
  </marquee>
   </div>
-  </div>
+  </div> 
+   <a href="#/app/openpoll" class="pollbtn" ng-if="fromid" >Opening Poll</a>
   </div>
 
   <div class="row">
@@ -57,7 +59,10 @@ The forum will see policy-makers and leading think-tanks come together to share 
                         </div>
                     </div>
 
-<h4>Devendra Fadnavis - Chief Minister of Maharashtra will give a special address at the event.</h4>
+<h4><!-- Devendra Fadnavis - Chief Minister of Maharashtra will give a special address at the event. -->
+  Honourable Chief Minister of Maharashtra, Shri Devendra Fadnavis will give a special address at the event.
+  
+</h4>
 
 
 
