@@ -1,0 +1,38 @@
+<ion-view>
+    <ion-nav-title>Leaderboard</ion-nav-title>
+    <ion-content>
+        <div class="triviatexr txtcenter">
+            <h4 class="wfont">Top 25 Active Users</h4></div>
+        <div ng-bind-html="contactdata"></div>
+        <div class="clr"></div>
+<!--         <div class="list">
+            <div class="card cbrd" ng-repeat="tur in topuser">
+                <div class="item">
+                    <div class="lgcircl">{{$index+1}}</div>
+                    <h2>{{tur.data.display_name}}</h2>
+                    <p>{{tur.data.designation}}</p>
+                   
+                </div>
+            </div>
+        </div> -->
+
+
+         <div class="list topinteractive">
+                <div ng-repeat="tur in topuser">
+                    <div class="item ulist"  ng-click="goturlwithpara('chat',tur.data.ID)">
+                     <div class="lgcircl">{{$index+1}}</div>
+                       {{tur.data.display_name}}
+                        <br/>
+                        <small ng-if="tur.data.designation && tur.data.company_name">{{tur.data.designation}} - {{tur.data.company_name}} </small>
+                       
+                    </div>
+                   
+                </div>
+            </div>
+
+
+
+
+
+    </ion-content>
+</ion-view>

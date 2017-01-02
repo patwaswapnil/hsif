@@ -1,158 +1,72 @@
 <ion-view>
- <ion-nav-title>HSIF 2016</ion-nav-title>
-  <ion-content>
-  <div class="banner home">
-  	<img src="img/banner.jpg"  alt="" />
-  </div>
-
-  <div class="row">
-    <div class="col col-40 mt10">
-    <img src="img/logo-dark.png"  alt="" />
-    </div>
-    <div class="col col-20"></div>
-    <div class="col col-40 txtright">
-   <img src="img/times-network-logo.png"  alt="" />
-    </div>
-  </div>
-
-
-
-  <div class="pageHead">
-    <div class="row">
-      <div class="col col-100"><h3 class="ptitle txtleft"><span>Sessions</span></h3></div>
-    </div>
-  </div>
-
-
-
-
-
-  <div class="clearfix"></div>
-    <div class="Ncontent">
-
-        <ul class="tabview">
-            <li ng-repeat="tab in sptabs" 
-                ng-class="{active:isActiveTab(tab.url)}" 
-                ng-click="onClickTab(tab)"><span>{{tab.stitle}}</span></li>
-        </ul>
-        <div id="mainView">
-            <div ng-include="spcurrentTab"></div>
+    <ion-nav-title>{{topheader}}</ion-nav-title>
+    <ion-content>
+        <div class="banner">
+            <img src="http://times-hitachi.cruxservers.in/wp-content/uploads/2016/11/banner.jpg" alt="" />
         </div>
- 
+        <div class="row">
+            <div class="col col-40 mt10">
+                <img src="http://times-hitachi.cruxservers.in/wp-content/uploads/2016/12/logo-dark.png" alt="" />
+            </div>
+            <div class="col col-20"></div>
+            <div class="col col-40 txtright">
+                <img src="http://times-hitachi.cruxservers.in/wp-content/uploads/2016/12/times-network-logo.png" alt="" />
+            </div>
+        </div>
+        <div class="pageHead">
+            <div class="row">
+                <div class="col col-100">
+                    <h3 class="ptitle txtleft"><span>{{pagehead}}</span></h3></div>
+            </div>
+        </div>
 
 
-    </div>
-  </ion-content>
-
-<div class="bar-footer">
-<a href="#/app/queries"><div class="sendquery ion-help"></div></a>
-<a href="javascript:void(0)" ng-click="checkuserlogin('chatlist');"><div class="chatbtn ion-chatbubble"></div></a>
-</div>
-
-
-
-
-
-<script type="text/ng-template" id="sspayment.html">
-    <div class="tabcontent bggrey">
-      <h5>Transition from Traditional banking to Digital Banking: Challenges & Enablers.</h5>
-
-      <p>Today the value proposition of a bank is defined purely by their customers & how they are serviced. The customer wants it all. In the internet age, banks are expected to deliver the best in traditional relationship banking as well digital banking making it imperative to bridge the gap between the two modules.</p>
-
-      <h5>Discussion Points</h5>
-     
-      <p> <strong>Customers First:</strong> Assessing  the shift in relationship between  bank and customer. The need to adopt a customer-centric business model & diversify online delivery of products & services. This means a transition from account-based view of customers to one that knows them as individuals and creates products & services that is unique to them.</p>
-
-      <p><strong>Traditional v/s New Age Customers:</strong> Customer adoption of technology is subjective & may vary. Hence banks need to make an effort to attract new age customers & at the same time retain traditional customers.</p>
-
-      <p><strong>Innovations in Technology:</strong> Evaluating the disruption of banking through technology as a rapid reality with the use of big data analytics, data management systems, mobile app/surface, Aadhar (Biometrics) etc.</p>
-      <p><strong>Omni Channel Banking:</strong> Provide an enhanced banking experience for customers by leveraging technology & having data as core.</p>
-
-      <p><strong>Customer Attraction & Retention:</strong> Development of new products, up gradation of systems/processes, customer education & gratification.</p>
-
-      <p><strong>Enhancing Existing Channels:</strong> Integrate digital with existing banking channels to provide enhanced services & offerings.</p>
-
-      <p><strong>Focused Automation: </strong> Traditional banks should deploy processes that are specially designed for the web instead of introducing many legacy & paper-based products & services to the web with minimal adoption</p>
-
-      <p><strong>Catching up with Technology:</strong> With banks such as Axis Bank, ICICI & SBI launching contactless cards or banking services through wearable technology, many banks have a lot of catching up to do. A look at some of the challenges that were encountered on that front</p>
-
-      <p><strong>Fitting in with the faster changing business environment:</strong> Like digital banking companies, traditional banks need to develop agile models, make use of design thinking, think about MVPs and deploy their software on a daily basis.</p>
-
-
-
-
-
-
-    </div>
-  </script>
-  
-  <script type="text/ng-template" id="ssrailways.html">
-    <div class="tabcontent bggrey">
-      <!-- <h4 class="tabc"><span>Railways</span></h4> -->
-      <h5>Increasing Railway Capacity and Reliability through Information Technology & Information Communication Technology</h5>
-      <p>The strategic importance of the rail sector is rising across the globe due to rising fuel prices, environmental concerns, and its value in promoting economic growth and competitiveness.</p>
-      <p>The challenges of running rail networks in India are immense, as rail operators need to deal with the complexity of rail networks, while maintaining services, and customer and staff safety. All these requirements need to be fulfilled while keeping costs at a reasonable level.</p>
-
-      <p>These are the challenges that Mumbai Suburban Railway also faces. Spread over 465 kilometres, the suburban railway operates 2,342 train services and carries more than million commuters daily – making it one of the busiest commuter rail systems in the world.</p>
-
-      <p>These are the challenges that Mumbai Suburban Railway also faces. Spread over 465 kilometers, the suburban railway operates 2,342 train services and carries more than million commuters daily – making it one of the busiest commuter rail systems in the world.</p>
-
-      <p><strong>The session will focus into the Information Technology & Information Communication Technology solutions that will play a significant role in improving rail operations and also improving customer satisfaction - with relatively small levels of investment.</strong></p>
-
-    </div>
-  </script>
-  
-  <script type="text/ng-template" id="ssmicroclinic.html">
-      <div class="tabcontent bggrey">
-     <h5>Building a robust IT infrastructure: The key to Success</h5>
-      <p>The session will focus on the importance of a Robust Infrastructure and how it is vital for businesses to sustain and succeed and in our fast fast-paced business environment.</p>
-
-      <h5>Discussion Points</h5>
-
-      <p class="fbold">1. Why do companies need world class IT?</p>
-<p>Organisations and businesses with effective IT strategies tend to be more profitable. Guest speakers will elaborate on why organisations prefer to buy IT services from an IT service provider. They will discuss the various ways in which a robust IT Infrastructure has helped their company thrive and how committed they are towards building such as an infrastructure.</p>
-
-
-<p class="fbold">2. End-user computing: Creating Value, Justifying Costs</p>
-<p>End-user computing is no longer about managing laptops and desktops. Organisations need to support user access to services, applications, and data on any device and in any location. Making this shift can be revolutionary – bringing flexibility, enhancing productivity, and cutting costs.</p>
-
-<p class="fbold">3. Cloud computing: A game changer for small and medium businesses?</p>
-
-<p>A robust IT infrastructure which includes e-mail connectivity, VoIP, file sharing, web meetings is seen as a lifeline for small and medium businesses – it can enable them to compete with the large businesses and put them in the big league.</p>
-
-<p>The cost, security and flexibility advantages that are offered by the Cloud brings these small businesses on-par with the large enterprises.</p>
-
-<p class="fbold">4. Cloud computing cost savings: Fact or fiction?</p>
-
-<p>For most organisations, the decision to move their business to the Cloud can be a daunting one. It means a wholesale change in the sourcing and delivery of IT products and services. But many companies are making the transition because they realize that it can save costs and increase profits.</p>
-
-
-    </div>
-  </script>
-
-    <script type="text/ng-template" id="sshitachidata.html">
-    <div class="tabcontent bggrey">
-        <h5>Digital Transformation: The roadmap for India Inc.</h5>
-            <p>Digital transformation today is what big data was a couple of years ago: a new paradigm for data management. Digital Disruption or Transformation is a hot topic for companies across India.</p>
-            <p>The convergence of a host of technologies such as mobile, social, analytics, connected devices, 3D printing and cloud computing is powering digital disruption and changing the way business is done.</p>
-            <p>Research shows that nearly 75% companies surveyed in India are already on their way to digitally transforming their business, while nearly 25% plan to do so in the next couple of years. These companies have also noticed an average revenue growth of nearly 10% as a direct result of their digital transformation.</p>
-
-            <p>With all the advantages that it offers, this Digital Revolution also brings with it huge challenges, as it impacts every task, activity and process across all levels of an organisation. This session will throw light on the opportunities and challenges that come with Digital Transformation and the way forward.</p>
+        <div class="clearfix"></div>
+          <ul class="tabview">
+                <li ng-repeat="tab in sdata" ng-class="{active:isActiveTab(tab.post_title)}" ng-click="onClickTab(tab.post_title)"><span>{{tab.post_title}}</span></li>
+            </ul>
+        <div class="Ncontent">
           
+            <div id="mainView" class="staticontent">
+                <div  ng-repeat="tab in sdata" ng-if="tab.post_title == activebtn">
+                    <div ng-bind-html="tab.post_content"></div>
+                </div>
+            </div>
+        </div>
+    </ion-content>
+
+
+    <div class="bar-footer">
+        <a href="#/app/queries">
+            <div class="sendquery ion-help"></div>
+        </a>
+        <a href="javascript:void(0)" ng-click="checkuserlogin('chatlist');">
+            <div class="chatbtn ion-chatbubble"></div>
+        </a>
     </div>
-  </script>
-  
 
 
 
 
 
-
-
-
-
-
-
-
+    <!-- <script type="text/ng-template" id="sspayment.html">
+        <div class="tabcontent bggrey" ng-controller="sessionPaymentCtrl">
+            <div ng-bind-html="sessionpayment"></div>
+        </div>
+    </script>
+    <script type="text/ng-template" id="ssrailways.html">
+        <div class="tabcontent bggrey" ng-controller="sessionRailCtrl">
+            <div ng-bind-html="sessionrailway"></div>
+        </div>
+    </script>
+    <script type="text/ng-template" id="ssmicroclinic.html">
+        <div class="tabcontent bggrey" ng-controller="sessionItCtrl">
+            <div ng-bind-html="sessionIt"></div>
+        </div>
+    </script>
+    <script type="text/ng-template" id="sshitachidata.html">
+        <div class="tabcontent bggrey" ng-controller="sessionDataCtrl">
+            <div ng-bind-html="sessionHdata"></div>
+        </div>
+    </script> -->
 </ion-view>
-

@@ -1,0 +1,11 @@
+  <div class="triviatexr mtm5">
+  <div class="row" ng-if="!fromid">
+  <div class="col col-25"><span>Trivia -</span></div>
+  <div class="col" ng-controller="triviaLatestCtrl">
+  <marquee scrollamount="5">
+  <span ng-bind-html="triviItlatest"></span>
+ </marquee>
+  </div>
+  </div> 
+   <a href="#/app/openpoll" class="pollbtn" ng-if="fromid" >Opening Poll</a>
+  </div>

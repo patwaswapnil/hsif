@@ -1,15 +1,41 @@
 <ion-view>
-    <ion-nav-title>{{pollstaticContent.page_data.heading_title}}</ion-nav-title>
+    <ion-nav-title>{{pollstaticContent.ctitle}}</ion-nav-title>
     <ion-nav-buttons side="right">
         <button class="button icon ion-refresh" ng-click="reloadresult()">
         </button>
     </ion-nav-buttons>
     <ion-content>
-        <div ng-show="pollstatic">
-            <div ng-bind-html="pollstaticContent.page_data.content"></div>
-        </div>
+  <div ng-show="pollstatic">
+    <div ng-bind-html="pollstaticContent"></div>
 
-     <div ng-hide="pollstatic">
+    <div class="Ncontent">
+    <div class="row p0">
+        <div class="col p0"> <h5>Rate this Session</h5></div>
+        <div class="col p0"><ionic-ratings ratingsobj='ratingsObject' index='$index'></ionic-ratings></div>
+    </div>
+     <label class="item item-input">
+    <textarea placeholder="Comments" rows="4"></textarea>
+  </label>
+<button class="button button-small button-assertive mt10"> &nbsp; Submit  &nbsp;</button>
+
+
+<br/>
+<br/>
+<br/>
+&nbsp;
+       
+
+    </div>
+    
+
+
+
+
+ </div>
+
+
+
+        <div ng-hide="pollstatic">
             <div class="triviatexr">
                 <div class="row">
                     <div class="col col-25"><span>Trivia -</span></div>
@@ -24,15 +50,11 @@
             <div class="pageHead">
                 <div class="row">
                     <div class="col col-100">
-                        <h3 class="ptitle txtleft">
-                     
-                        <span>Opening Poll</span>
-                        </h3>
-                        </div>
+                        <h3 class="ptitle txtleft"><span>Opening Poll</span></h3></div>
                 </div>
             </div>
-            <h5 class="txtcenter fgreen" ng-if="result">{{result}}</h5>
-            <div class="Ncontent pollcont" ng-show="!fstatus">
+            <h5 class="txtcenter fgreen" ng-if="result"> {{result}} </h5>
+            <div class="Ncontent pollcont">
                 <ion-list>
                     <div class="card ccard" ng-repeat="qt in polld">
                         <form name="test{{$parent.$index}}">
@@ -61,44 +83,6 @@
                     </div>
                 </ion-list>
             </div>
-
-
-             <div class="Ncontent" ng-show="fstatus">
-              <h4> 
-              Please Share your feedback for {{datafeedbak.session_pname}} Session
-              </h4>
-              <br/>
-                <form name="feedbackform" id="feedbackform" ng-submit="sessionfeedback(fdata)">
-              
-                   
-                        <h5>How was this Session ?</h5>
-                         <div style="padding: 0px 0 20px 0">
-                         <ionic-ratings ratingsobj='ratingsObject' index='$index'></ionic-ratings>
-                        </div>
-               
-                <label class="item item-input">
-                    <textarea placeholder="Review (if any)" rows="4" ng-model="fdata.comment"></textarea>
-                </label>
-                <button type="submit" class="button button-block button-assertive brd-r0 mt10"> &nbsp; Submit &nbsp;</button>
-                </form>
-                <span class="errort">{{rerror}}</span>
-                <br/>
-                <div class="succmsg"><h4>{{succmsg}}</h4></div>
-                <br/> &nbsp;
-            </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
         </div>
 
 
@@ -112,15 +96,13 @@
 
 
 
-
-        
     </ion-content>
-   <div class="bar-footer" ng-show="pollstatic">
+    <div class="bar-footer" ng-show="pollstatic">
         <a href="#/app/queries">
             <div class="sendquery ion-help"></div>
         </a>
         <a href="javascript:void(0)" ng-click="checkuserlogin('chatlist');">
             <div class="chatbtn ion-chatbubble"></div>
-        </a> 
+        </a>
     </div>
 </ion-view>

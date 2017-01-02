@@ -1,5 +1,5 @@
 <ion-view>
- <ion-nav-title>HSIF 2016</ion-nav-title>
+ <ion-nav-title>{{qtext.ctitle}}</ion-nav-title>
 
   <ion-content>
   <div class="triviatexr">
@@ -14,14 +14,12 @@
   </div>
 
 <div class="Ncontent">
-
 <div class="">
-
     <h3 class="txtcenter"><span class="undline">Query</span></h3>
-  <h4 class="txtcenter mt20">
-     Have a query regarding Hitachi Social Innovation Forum 2016!!! Submit Now! Be a part of this transformation
+  <h4 class="txtcenter mt20">{{qtext.qheading}}
       </h4>
-<div class="nttext txtcenter sfont">(Only HSIF related queries would be entertained)</div>
+<div class="nttext txtcenter sfont">{{qtext.qtexts}}</div>
+
 <div class="fgreen txtcenter" ng-if="mailresult"><br/>{{mailresult}}</div>
   <div class="list mt20">
   <form name="querys" id="querys" ng-submit="sendemail(queryobj)">
@@ -32,7 +30,7 @@
     <input type="email" placeholder="Email" name="useremail" ng-model="queryobj.useremail" required="">
   </label>
 	<label class="item item-input">
-    <input type="text" placeholder="Phone" name="mobile" ng-model="queryobj.mobile" required="">
+    <input type="text" placeholder="Mobile" name="mobile" ng-model="queryobj.mobile" required="">
   </label>
   
  <div class="cradiolabel"><h5>Query Related To</h5> </div>

@@ -1,35 +1,7 @@
 <ion-view>
- <ion-nav-title>HSIF 2016</ion-nav-title>
+ <ion-nav-title>{{timesnetworktext.page_data.heading_title}}</ion-nav-title>
   <ion-content>
-  <div class="banner home">
-  	<img src="img/banner.jpg"  alt="" />
-  </div>
-  <div class="clearfix"></div>
-  <div class="row">
-    <div class="col col-40 mt10">
-    <img src="img/logo-dark.png"  alt="" />
-    </div>
-    <div class="col col-20"></div>
-    <div class="col col-40 txtright">
-   <img src="img/times-network-logo.png"  alt="" />
-    </div>
-  </div>
- 
-  <div class="pageHead">
-    <div class="row">
-    
-      <div class="col col-100"><h3 class="ptitle txtleft"><span>About Times Network</span></h3></div>
-     
-    </div>
-  </div>
-    <div class="Ncontent">
-
-          <h5>TIMES NETWORK, is part of India’s largest media conglomerate, The Times Group.</h5>
-            <p>It houses upscale brands including; TIMES NOW – India’s No. 1 English News channel, ET NOW – India’s No. 1 Stocks and Business News channel; Magicbricks Now - India’s first Real Estate and Property Business TV Channel; MOVIES NOW and MOVIES NOW HD – India’s leading English Movies channel; MN+ – The Gold class of Hollywood; Romedy NOW and Romedy NOW HD – a unique destination for Love and Laughter and zoOm – India’s No. 1 Bollywood channel. The network delivers segmented and differentiated content under one umbrella. It informs, entertains and engages over 100 million urban affluent viewers in India and is available in over 82 countries across the globe.</p>
-            
-       
-
-    </div>
+    <div ng-bind-html="timesnetworktext.page_data.content"></div>
   </ion-content>
 
 <div class="bar-footer">

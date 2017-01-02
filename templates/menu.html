@@ -1,82 +1,85 @@
 <ion-side-menus enable-menu-with-back-views="false">
-
-  <ion-side-menu-content>
-    <ion-nav-bar class="bar-dark"  >
-      <ion-nav-back-button >
-      </ion-nav-back-button>
-
-      <ion-nav-buttons side="left">
-        <button class="button button-icon button-clear ion-navicon" menu-toggle="left">
-        </button>
-      </ion-nav-buttons>
-    </ion-nav-bar>
-    <ion-nav-view name="menuContent"></ion-nav-view>
-  </ion-side-menu-content>
-
-  <ion-side-menu side="left">
-  <div class="mclose" menu-toggle="left"><i class="ion-android-close"></i></div>
-    <div class="menuhead">
-     <img src="img/logo-menu.png" />
-    </div>
-
-    <ion-content class="top150">
-      <ion-list>
-     <!--    <ion-item menu-close ng-click="login()" class="ntlink">
+    <ion-side-menu-content>
+        <ion-nav-bar class="bar-dark">
+            <ion-nav-back-button>
+            </ion-nav-back-button>
+            <ion-nav-buttons side="left">
+                <button class="button button-icon button-clear ion-navicon" menu-toggle="left">
+                </button>
+            </ion-nav-buttons>
+            <ion-nav-buttons side="right" >
+            <div ng-if="fromid">
+                <a class="hicon" ui-sref="app.chatlist" ng-if="counth.allC"><i class="ion-chatbubble-working"></i>
+              <div class="count">{{counth.allC}}  </div>
+               </a>
+               </div>
+            </ion-nav-buttons>
+        </ion-nav-bar>
+        <ion-nav-view name="menuContent"></ion-nav-view>
+    </ion-side-menu-content>
+    <ion-side-menu side="left">
+        <div class="mclose" menu-toggle="left"><i class="ion-android-close"></i></div>
+        <div class="menuhead">
+            <img src="http://times-hitachi.cruxservers.in/wp-content/uploads/2016/12/logo-menu.png" />
+        </div>
+        <ion-content class="top150">
+            <ion-list class="cmenu">
+                <!--    <ion-item menu-close ng-click="login()" class="ntlink">
           Home
         </ion-item> -->
-    <h3 class="userinfo" ng-if="loginuserv.firstname">{{loginuserv.firstname}}</h3>
-        <ion-item menu-close href="#/app/home">
-          Home
-        </ion-item>
-
-
-        <ion-item menu-close href="#/app/agenda">
-          Agenda
-        </ion-item>
-        <ion-item menu-close href="#/app/sessions">
-          Sessions
-        </ion-item>
-        <ion-item menu-close href="#/app/speakers">
-          Speakers
-        </ion-item>
-    <!--     <ion-item menu-close href="#/app/home">
+                <h3 class="userinfo" ng-if="loginuserv.display_name">{{loginuserv.display_name}}</h3>
+                <ion-item menu-close href="#/app/home">
+                   <i class="ion-home"></i> Home
+                </ion-item>
+                <ion-item menu-close ui-sref="app.interctive">
+                   <i class="ion-person"></i> Leaderboard
+                </ion-item>
+                <ion-item menu-close href="#/app/agenda">
+                   <i class="ion-clock"></i> Agenda
+                </ion-item>
+                <ion-item menu-close href="#/app/sessions">
+                 <i class="ion-ios-paper-outline"></i> Sessions 
+                </ion-item>
+                <ion-item menu-close href="#/app/speakers"> 
+                    <i class="ion-mic-c"></i> Speakers {{  }}
+                </ion-item>
+                <!--     <ion-item menu-close href="#/app/home">
           About Event
         </ion-item> -->
+                <ion-item menu-close href="#/app/abouthitachi">
+                  <i class="ion-person"></i>  About Hitachi
+                </ion-item>
+                <ion-item menu-close href="#/app/timesnetwork">
+                   <i class="ion-radio-waves"></i> About Times Network
+                </ion-item>
+                <ion-item menu-close href="javascript:void();" ng-click="checkuserlogin('chatlist');">
+                  <i class="ion-chatbubbles"></i> Chat
+                </ion-item>
+                <ion-item menu-close href="#/app/queries">
+                   <i class="ion-help"></i> Query
+                </ion-item>
+                <ion-item menu-close href="#/app/trivia">
+                   <i class="ion-android-contact"></i> Trivia
+                </ion-item>
+                <ion-item menu-close href="javascript:void();" ng-click="checkuserlogin('openpoll');">
+                   <i class="ion-pin"></i> Opening Poll
+                </ion-item>
+                <ion-item menu-close href="#/app/contact">
+                  <i class="ion-ios-location"></i>  Contact
+                </ion-item>
+                <ion-item menu-close href="#/app/login" ng-if="!fromid">
+                  <i class="ion-locked"></i>  <span>Login</span>
+                </ion-item>
+                <div class="item item-complex curpoint" ng-controller="logoutctrl" ng-if="fromid">
+                    <div menu-close class="item-content" ng-click="logout()">
 
-        <ion-item menu-close href="#/app/abouthitachi">
-          About Hitachi
-        </ion-item>
-
-        <ion-item menu-close href="#/app/timesnetwork">
-          About Times Network
-        </ion-item>
-        <ion-item menu-close href="javascript:void();"  ng-click="checkuserlogin('chatlist');">
-          Chat
-        </ion-item>
-        <ion-item menu-close href="#/app/queries">
-        Query
-        </ion-item>
-        <ion-item menu-close href="#/app/trivia">
-          Trivia
-        </ion-item>
-        <ion-item menu-close href="javascript:void();" ng-click="checkuserlogin('openpoll');">
-          Opening Poll
-        </ion-item>
-        <ion-item menu-close href="#/app/contact">
-          Contact
-        </ion-item>
-           <ion-item menu-close href="#/app/login"  ng-if="!fromid">
-         <span >Login</span>
-        </ion-item>
-       <div class="item item-complex curpoint"  ng-controller="logoutctrl" ng-if="fromid" >
-         <div menu-close class="item-content"  ng-click="logout()" >Logout</div>
-        </div>
-       <ion-item menu-close href="#/app/register" ng-controller="logoutctrl" ng-if="!fromid">
-          Register
-        </ion-item>
-        <div style="height:20px;"></div>
-
-      </ion-list>
-    </ion-content>
-  </ion-side-menu>
+                 <i class="ion-unlocked"></i>   Logout</div>
+                </div>
+                <ion-item menu-close href="#/app/register" ng-controller="logoutctrl" ng-if="!fromid">
+                   <i class="ion-person"></i> Register
+                </ion-item>
+                <div style="height:20px;"></div>
+            </ion-list>
+        </ion-content>
+    </ion-side-menu>
 </ion-side-menus>

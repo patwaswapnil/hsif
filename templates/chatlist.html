@@ -1,27 +1,44 @@
 <ion-view>
- <ion-nav-title>User List</ion-nav-title>
-
-    <ion-content>
-   
-<div class="list list-inset">
-  <label class="item item-input">
-    <i class="icon ion-search placeholder-icon"></i>
-    <input type="text" placeholder="Search" ng-model="usearch">
-  </label>
-</div>
-
-
-
-      <div class="list">
-        <div ng-repeat="user in userdata | filter:usearch" >
-            <a href="#/app/chat/{{user.ID}}" class="item" >
-            {{user.fullname}}<br/>
-          
-           <small ng-if="user.companyname && user.designation">{{user.designation}} - {{user.companyname}} </small> 
-            </a>
-            
+    <ion-nav-title>Chat</ion-nav-title>
+    <div class="headtab">
+        <ul class="tabview">
+            <li ng-repeat="tab in chattabs" ng-class="{active:activetab(tab.url)}" ng-click="tabchange(tab)"><span>{{tab.stitle}}</span></li>
+        </ul>
+        <div>
+            <label class="item item-input bgwhite">
+                <i class="icon ion-search placeholder-icon"></i>
+                <input type="text" placeholder="Search" ng-model="usearch">
+            </label>
         </div>
-      </div>
-  
+    </div>
+    <ion-content>
+        <div id="mainView" class="mt90 chatlisting">
+            <div ng-include="chatcurrentTab"></div>
+        </div>
+        <script type="text/ng-template" id="speakaruser">
+            <div class="list">
+                <div ng-repeat="user in userdata | filter:usearch" ng-if="user.user_type==1" ng-class="user.msgCnt=='0' ? '':'unread'">
+                    <div class="item ulist" ng-click="gotoCpage(user.ID)">
+                        {{user.fullname}}
+                        <br/>
+                        <small ng-if="user.companyname && user.designation">{{user.designation}} - {{user.companyname}}  </small>
+                    </div>
+                    <div class="count" ng-if="user.msgCnt!=0">{{user.msgCnt}}</div>
+                </div>
+            </div>
+        </script>
+        <script type="text/ng-template" id="cuser">
+            <div class="list">
+                <div ng-repeat="user in userdata | filter:usearch" ng-class="user.msgCnt=='0' ? '':'unread'" ng-if="user.user_type!=1">
+                    <div class="item ulist" ng-click="gotoCpage(user.ID)">
+                        {{user.fullname}}
+                        <br/>
+                        <small ng-if="user.companyname && user.designation">{{user.designation}} - {{user.companyname}} </small>
+                         <div class="count" ng-if="user.msgCnt!=0">{{user.msgCnt}}</div>
+                    </div>
+                   
+                </div>
+            </div>
+        </script>
     </ion-content>
 </ion-view>

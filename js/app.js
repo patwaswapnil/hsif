@@ -4,10 +4,64 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 // 'starter.controllers' is found in controllers.js
-angular.module('hsif', ['ionic', 'hsif.controllers','ngRoute'])
+angular.module('hsif', ['ionic', 'hsif.controllers','ngRoute','hsif.ratings'])
 
-.run(function($ionicPlatform,$rootScope,$state,$ionicLoading) {
+.run(function($ionicPlatform,$rootScope,$state,$ionicLoading,$ionicHistory) {
+
+
+
+
+ $ionicPlatform.registerBackButtonAction(function(e){
+    if ($rootScope.backButtonPressedOnceToExit) {
+      ionic.Platform.exitApp();
+    }
+    else if ($ionicHistory.backView()) {
+      $ionicHistory.goBack();
+    }
+    else {
+      $rootScope.backButtonPressedOnceToExit = true;
+      window.plugins.toast.showShortCenter(
+        "Press back button again to exit",function(a){},function(b){}
+      );
+      setTimeout(function(){
+        $rootScope.backButtonPressedOnceToExit = false;
+      },2000);
+    }
+    e.preventDefault();
+    return false;
+  },101);
+
+
   $ionicPlatform.ready(function() {
+   if (typeof analytics !== 'undefined') {
+   // console.log('36');
+     analytics.startTrackerWithId("UA-52669715-45");
+      analytics.trackView("Awesome Controller");
+ } else {
+     console.log("Google Analytics Unavailable");
+ }
+
+var notificationOpenedCallback = function(result) {
+  var data = result.notification.payload.additionalData;
+  if (data && data.targetUrl) {
+    $state.go('app.chat',{id:data.targetUrl});
+  }
+};
+ 
+
+ window.plugins.OneSignal.startInit("01d7b7f6-dd68-4f45-8697-f58d1d11f25c", "166425495889")
+ .handleNotificationOpened(notificationOpenedCallback)
+ .endInit();
+                window.plugins.OneSignal.getIds(function(ids) {
+                   // $localStorage.$default({device_id: "", os: ""});
+                   console.log('getIds: ' + JSON.stringify(ids));
+                    $rootScope.plyerid=JSON.parse(JSON.stringify(ids['userId']));
+                
+                  
+                    
+                });
+
+
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
     if (window.cordova && window.cordova.plugins.Keyboard) {
@@ -41,12 +95,6 @@ angular.module('hsif', ['ionic', 'hsif.controllers','ngRoute'])
         });
       }
     }
-
-
-
-
-
-
 
 })
 
@@ -193,11 +241,6 @@ $stateProvider
     }
   })
 
-
-
-
-
-
     .state('app.queries', {
     url: '/queries',
     views: {
@@ -228,7 +271,15 @@ $stateProvider
     }
   })
 
-
+  .state('app.interctive', {
+    url: '/interctive',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/interctive.html',
+        controller: 'inractiveCtrl'
+      }
+    }
+  })
 
 
   $urlRouterProvider.otherwise('/app/home');

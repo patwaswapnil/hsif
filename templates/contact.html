@@ -1,32 +1,12 @@
 <ion-view>
- <ion-nav-title>HSIF 2016</ion-nav-title>
+ <ion-nav-title>{{contactdata.page_data.heading_title}}</ion-nav-title>
   <ion-content>
-
   <div class="triviatexr txtcenter"><h4 class="wfont">Contact</h4></div>
-
     <div class="googlemap" >
-    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1886.1750441376846!2d72.826767!3d19.004289!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x25941ac06d22a74f!2sTimes+Now!5e0!3m2!1sen!2sin!4v1470658426783"  frameborder="0" style="border:0" allowfullscreen></iframe>
+<iframe ng-src="{{lmap}}" frameborder="0" style="border:0" allowfullscreen></iframe>
  </div>
-
-
-
-    <div class="Ncontent">
-    	<!-- <p ng-controller="loginmodalCtrl"> <span ng-click="modal.show()">Collaborations.</span> </p> -->
-      <h5 class="">Contact Details</h5>
-         <p class="txtleft">
-         <strong>Office Address</strong> <br/>
-         TIMES NOW <br/>
-         TIMES GLOBAL BROADCASTING COMPANY LIMITED <br/>
-         Kamala Mills, Trade House,1st Floor, <br/>Senapati Bapat Marg, 
-         Lower Parel, <br/>Mumbai - 400 013, India.
-           </p>
-           <p><strong>Phone:</strong> <a ng-href="tel:+91-2224999944">(+9122) 24999944 </a></p>
-         
-      <!--      <p><strong>Email:</strong>  manik.Kataria@timesgroup.com </p> -->
-           <p><strong>Fax: </strong> (+9122) 24931341</p>
-
-    </div>
-  </ion-content>
+<div ng-bind-html="contactdata.page_data.content"></div>
+</ion-content>
 
 <div class="bar-footer">
 <a href="#/app/queries"><div class="sendquery ion-help"></div></a>

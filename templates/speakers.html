@@ -1,31 +1,46 @@
 <ion-view>
- <ion-nav-title>HSIF 2016</ion-nav-title>
-  <ion-content class="has-header>
-  <div class="banner">
-  	<img src="img/banner.jpg"  alt="" />
-  </div>
+ <ion-nav-title>{{topheader}}</ion-nav-title>
+  <ion-content class="has-header">
+        <div class="banner">
+            <img src="http://times-hitachi.cruxservers.in/wp-content/uploads/2016/11/banner.jpg" alt="" />
+        </div>
+        <div class="row">
+            <div class="col col-40 mt10">
+                <img src="http://times-hitachi.cruxservers.in/wp-content/uploads/2016/12/logo-dark.png" alt="" />
+            </div>
+            <div class="col col-20"></div>
+            <div class="col col-40 txtright">
+                <img src="http://times-hitachi.cruxservers.in/wp-content/uploads/2016/12/times-network-logo.png" alt="" />
+            </div>
+        </div>
 
-  <div class="row">
-    <div class="col col-40 mt10">
-    <img src="img/logo-dark.png"  alt="" />
-    </div>
-    <div class="col col-20"></div>
-    <div class="col col-40 ">
-   <img src="img/times-network-logo.png"  alt="" />
-    </div>
-  </div>
+
   <div class="pageHead">
   	<div class="row">
-  	<div class="col col-100"><h3 class="ptitle txtleft"><span>Speakers</span></h3></div>
+  	<div class="col col-100"><h3 class="ptitle txtleft"><span>{{pagehead}}</span></h3></div>
   		
   	</div>
   </div>
 
 
   <div class="clearfix"></div>
-    <div class="Ncontent">
+
+          <ul class="tabview">
+                <li ng-repeat="tab in sdata" ng-class="{active:isActiveTab(tab.post_title)}" ng-click="onClickTab(tab.post_title)"><span>{{tab.post_title}}</span></li>
+            </ul>
+        <div class="Ncontent">
+          
+            <div id="mainView" class="staticontent">
+                <div  ng-repeat="tab in sdata" ng-if="tab.post_title == activebtn">
+                    <div ng-bind-html="tab.post_content"></div>
+                </div>
+            </div>
+        </div>
 
 
+
+
+<!--     <div class="Ncontent">
         <ul class="tabview">
             <li ng-repeat="tab in tabs" 
                 ng-class="{active:isActiveTab(tab.url)}" 
@@ -34,10 +49,7 @@
         <div id="mainView">
             <div ng-include="currentTab"></div>
         </div>
- 
-
-
-    </div>
+    </div> -->
   </ion-content>
 
 
@@ -51,11 +63,8 @@
 <script type="text/ng-template" id="payment.html">
 		<div class="tabcontent p0" ng-controller="speakPaymentCtrl">
 	 <div ng-bind-html="speakpayment"></div>	
-
 	</div>
 </script>
-
-
 <script type="text/ng-template" id="hitachidata.html">
 		<!-- Hitachi Data Solutions -->
 		<div class="tabcontent p0" ng-controller="speakHdsCtrl">
@@ -63,10 +72,6 @@
 		</div>
 </script>
 
-
-
-
-	
 	<script type="text/ng-template" id="railways.html">
 		<div class="tabcontent p0" ng-controller="speakRailCtrl">
 			<div ng-bind-html="speakrailway"></div>

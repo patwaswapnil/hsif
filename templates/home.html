@@ -1,12 +1,11 @@
 <ion-view  cache-view="false" hide-nav-bar="false">
-
- <ion-nav-title>HSIF 2016</ion-nav-title>
+ <ion-nav-title>{{homecontent.page_data.heading_title}}</ion-nav-title>
   <ion-content>
   <div class="banner home">
-  	<img src="img/banner.jpg"  alt="" />
+  	<img src="{{homecontent.page_data.img}}"  alt="" />
   </div>
   <div class="clearfix"></div>
-  <div class="triviatexr mtm5">
+   <div class="triviatexr mtm5">
   <div class="row" ng-if="!fromid">
   <div class="col col-25"><span>Trivia -</span></div>
   <div class="col" ng-controller="triviaLatestCtrl">
@@ -18,56 +17,10 @@
    <a href="#/app/openpoll" class="pollbtn" ng-if="fromid" >Opening Poll</a>
   </div>
 
-  <div class="row">
-    <div class="col col-40 mt10">
-    <img src="img/logo-dark.png"  alt="" />
-    </div>
-    <div class="col col-20"></div>
-    <div class="col col-40 ">
-   <img src="img/times-network-logo.png"  alt="" />
-    </div>
-  </div>
 
-  <div class="pageHead">
-  	<div class="row">
-  	
-  		<div class="col col-100"><h3 class="ptitle txtleft"><span>About Event</span></h3></div>
-  	
-  	</div>
-  </div>
+    <div ng-bind-html="homecontent.page_data.content"></div>
 
-
-
-  <div abcd="Naresh"></div>
-
-
-    <div class="Ncontent">
-
-    	<p>Collaboration. Inspiration. Innovation. Witness the limitless possibilities that the future holds at Hitachi Social Innovation Forum.</p>
-
-<p>Global conglomerate Hitachi, in partnership with The Times Network is proud to bring to you ‘The Hitachi Social Innovation Forum 2016’ in Mumbai. With the goal of resolving increasingly complex rapid urbanisation issues through collaborative creation, Hitachi will bring together some of India’s brightest minds to share their vision on transforming India’s future and explore the numerous possibilities for growth and advancement through innovations in technology.</p>
-
-<p>The event will be an effective mix of highly interactive discussions and debates on Information Technology, Urban Rail Transportation and Payment Services. The event will provide you an opportunity to voice your opinions and suggestions as you collaborate in solving the many challenges that rapid urbanisation brings to the society and fuel India’s growth story. The event would also showcase Hitachi’s ground-breaking technologies and innovations in a unique exhibition that would further support to usher India into the ‘Digital Age.’
-The forum will see policy-makers and leading think-tanks come together to share ideas that will shape India’s future and we want YOU to be a part of this experience.</p>
-
-
-                <div class="promo-full uppercase">
-                        <div class="container clearfix">
-                            <h3 class="txtcenter">BLOCK YOUR CALENDAR</h3>
-                            <div class="txtcenter" style="margin:15px 0px;">DATE: 9TH SEPTEMBER, 2016   <br/>    TIME: 09:30 HRS ONWARDS  &nbsp;  <br/>  VENUE: TAJ LANDS END, MUMBAI</div>
-                            <div class="clearfix"></div>
-                        </div>
-                    </div>
-
-<h4><!-- Devendra Fadnavis - Chief Minister of Maharashtra will give a special address at the event. -->
-  Honourable Chief Minister of Maharashtra, Shri Devendra Fadnavis will give a special address at the event.
   
-</h4>
-
-
-
-
-    </div>
   </ion-content>
 
 <div class="bar-footer">

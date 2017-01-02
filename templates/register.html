@@ -1,5 +1,5 @@
 <ion-view>
-    <ion-nav-title>HSIF 2016</ion-nav-title>
+    <ion-nav-title>{{apptitle}}</ion-nav-title>
   <ion-content>
     <div class="Ncontent">
 
@@ -43,7 +43,7 @@
       </small>
   </label>
 	<label class="item item-input">
-    <input type="text" placeholder="Phone*" name="phone" ng-model="reg.phone" required="">
+    <input type="text" placeholder="Mobile*" name="phone" ng-model="reg.phone" required="">
      <small ng-show="register.$submitted || register.phone.$touched">
       <span ng-show="register.phone.$error.required" class="ion-alert-circled"></span>
     </small>

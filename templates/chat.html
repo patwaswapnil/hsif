@@ -1,38 +1,36 @@
-<ion-view "class="messaging-view">
+<ion-view "class="messaging-view ">
  <ion-nav-title>{{fuser.display_name}}</ion-nav-title>
-<ion-nav-buttons side="right">
-        <button class="button icon ion-refresh" ng-click="doRefresh()">
+
+<ion-nav-buttons side="right ">
+        <button class="button icon ion-refresh " ng-click="doRefresh() ">
  </button>
 </ion-nav-buttons>
 
 
     <ion-content class="content-stable chatcontent"
-                 on-swipe-left="hideTime = false"
-                 on-swipe-right="hideTime = true">
+                 on-swipe-left="hideTime=false"
+                 on-swipe-right="hideTime=true">
 
 <ion-refresher
-    pulling-text="Pull to refresh..."
-    on-refresh="doRefresh()">
+    pulling-text="Pull to refresh... "
+    on-refresh="doRefresh() ">
   </ion-refresher>
 
- <div class="Ncontent">
-
-
-      <div ng-repeat="pchat in prchatdata">
+ <div class="Ncontent ">
+      <div ng-repeat="pchat in prchatdata ">
       <div  class="messages"  ng-if="fromid!=pchat.from">
-        <div class="message slide-left" >
+        <div class="message slide-left " >
           <span>{{pchat.msg}}
-<div class="chatdateleft">{{pchat.created_at | date:'yyyy-MM-dd'}}</div>
+<div class="chatdateleft ">{{pchat.created_at | date:'yyyy-MM-dd'}}</div>
           </span>
         </div>
     
       </div>
 
     <div class="messages other" ng-if="fromid==pchat.from">
-       <!-- <div class="time" >{{pchat.created_at}}</div> -->
         <div class="message">
           <span>{{pchat.msg}}
-<div class="chatdateright">{{pchat.created_at | date}} </div>
+<div class="chatdateright ">{{pchat.created_at | date}} </div>
           </span>
         </div>
      
@@ -40,11 +38,7 @@
       </div>
 
 
-<!--   <div  class="messages" ng-repeat="pchat in prchatdata" >
-        <div class="message slide-right" >
-          <span>{{pchat.msg}}</span>
-        </div>
-      </div>  -->
+
 
 
 
@@ -54,14 +48,11 @@
 
 
       <div ng-repeat="message in messages">
-    <!--    <div class="message slide-right">
-       <span>{{ message.text }}</span>
-       </div> -->
      
        <div class="messages other" >
-        <div class="message">
+        <div class="message ">
           <span>{{ message.text }}
- <div class="chatdateright">{{message.time}}</div>
+ <div class="chatdateright ">{{message.time}}</div>
           </span>
          </div>
          
@@ -80,6 +71,9 @@
         Send
       </button>
     </ion-footer-bar>
+
+
+
 
 
 

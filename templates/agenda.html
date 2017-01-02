@@ -1,110 +1,14 @@
 <ion-view>
- <ion-nav-title>HSIF 2016</ion-nav-title>
+ <ion-nav-title>{{agendacontent.page_data.heading_title}}</ion-nav-title>
   <ion-content>
   <div class="banner home">
-  	<img src="img/banner.jpg"  alt="" />
+    <img src="{{agendacontent.page_data.img}}"  alt="" />
   </div>
   <div class="clearfix"></div>
-  <div class="row">
-    <div class="col col-40 mt10">
-    <img src="img/logo-dark.png"  alt="" />
-    </div>
-    <div class="col col-20"></div>
-    <div class="col col-40 txtright">
-   <img src="img/times-network-logo.png"  alt="" />
-    </div>
-  </div>
- 
-  <div class="pageHead">
-    <div class="row">
-    
-      <div class="col col-100"><h3 class="ptitle txtleft"><span>Agenda</span></h3></div>
-     
-    </div>
-  </div>
-    <div class="Ncontent">
-    <p>Hitachi in collaboration with The Times Network is bringing together India’s brightest minds to share their vision on the many possibilities for growth and advancement that can transform India’s growth story into something truly phenomenal. </p>
-<p>So, come be a part of this collaborative creation.</p>
+  
+    <div ng-bind-html="agendacontent.page_data.content"></div>
 
-  <div class="schedulecard">
-
-  <h5>MAIN EVENT AREA (BALL ROOM 1&2 )</h5>
-<!--   <p>Registration starts 9:30 A.M. ONWARDS</p> -->
-
-      <div class="item" >
-      <span class="fbold">Time</span> : 10:30 - 11:00    <br/>
-      <span class="fbold">Details</span>  Inaugural Lamp Lighting and Opening Ceremony <br>
-                                   Welcome Address by <b>Mr. Kojin Nakakita</b>, Managing Director,
-                                   Hitachi India Pvt. Ltd. <br>
-                                   Guest Speech by H.E. <b>Mr. Kenji Hiramatsu</b>, Ambassador of Japan to India
-                                   <br>
-                                   Keynote Address by <b>Shri. Devendra Fadnavis</b>, Hon'ble Chief Minister of Maharashtra
-      </div>
-
-      <div class="item" >
-      <span class="fbold">Time</span> : 11:00 - 11:15 <br/>
-      <span class="fbold">Details</span> : Tete-a- Tete with <b>Shri. Devendra Fadnavis</b>
-      </div>
-
-      <div class="item" >
-      <span class="fbold">Time</span> : 11:15 - 12:15 <br/>
-      <span class="fbold">Details</span> : Session 1: Digital Transformation: The Roadmap for India Inc.
-      </div>
-
-      <div class="item" >
-      <span class="fbold">Time</span> : 12:20 - 13:30 <br/>
-      <span class="fbold">Details</span> : Session 2: Transition from Traditional Banking to Digital Banking – Challenges and Enablers
-      </div>
-
-   
-       <div class="item" >
-      <span class="fbold">Time</span> : 13:30 - 14:30 <br/>
-      <span class="fbold">Details</span> : LUNCH 
-      </div>
-
-        <div class="item" >
-      <span class="fbold">Time</span> : 14:30 - 15:15 <br/>
-      <span class="fbold">Details</span> : Session 3: Building a Robust IT Infrastructure: The Key to Success
-      </div>
-
-      <div class="item" >
-      <span class="fbold">Time</span> : 15:20 - 16:30 <br/>
-      <span class="fbold">Details</span> : Session 4: Increasing Railway Capacity and Reliability through IT & ICT
-      </div>   
-
-<h5>Business Seminars (Salcette 1&2)</h5>
-
-
-       <div class="item" >
-      <span class="fbold">Time</span> : 12:15 - 13:15 <br/>
-      <span class="fbold">Details</span> : Powering the Digital Enterprise
-      </div>
-
-       <div class="item">
-      <span class="fbold">Time</span> : 14:30 - 15:30<br/>
-      <span class="fbold">Details</span> : Cash Management Strategies for the Future
-      </div>
-
-      <div class="item">
-      <span class="fbold">Time</span> : 15:45- 16:30 <br/>
-      <span class="fbold">Details</span> : Cloud Transformation and Security
-      </div>
-
-
-
-
-
-
-
-
-
-  </div>
-          
-            
-       
-
-    </div>
-  </ion-content>
+</ion-content>
 
 <div class="bar-footer">
 <a href="#/app/queries"><div class="sendquery ion-help"></div></a>

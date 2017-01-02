@@ -1,37 +1,10 @@
 <ion-view>
- <ion-nav-title>HSIF 2016</ion-nav-title>
+ <ion-nav-title>{{abouthitachi.page_data.heading_title}}</ion-nav-title>
   <ion-content>
-  <div class="banner home">
-  	<img src="img/banner.jpg"  alt="" />
-  </div>
-  <div class="clearfix"></div>
 
-  <div class="row">
-    <div class="col col-40 mt10">
-    <img src="img/logo-dark.png"  alt="" />
-    </div>
-    <div class="col col-20"></div>
-    <div class="col col-40 txtright">
-   <img src="img/times-network-logo.png"  alt="" />
-    </div>
-  </div>
-  <div class="pageHead">
-    <div class="row">
-      <div class="col col-100"><h3 class="ptitle txtleft"><span>About Hitachi</span></h3></div>
-   
-    </div>
-  </div>
-  </div>
-    <div class="Ncontent">
 
-           
-            <p>Hitachi started its business in India in the 1930's. with over 25 business bases and over 10,000 employees in India. Presently, Hitachi Group in India is expanding through using its expertise in 'Social Innovation Business', by providing solutions in the areas including information & telecommunication systems, industrial systems like water, oil & gas supply and management, transportation and urban development systems.</p>
 
-            <p>Together with further localisation, Hitachi aims to contribute to developing a sustainable society in India as well as contributing to the country's economic growth.</p>
-
-            <p>For more information about the Hitachi Group in India, please visit the website at <a href="http://www.hitachi.co.in/" target="_blank">www.hitachi.co.in</a></p>
-         
-
+    <div ng-bind-html="abouthitachi.page_data.content">
     </div>
   </ion-content>
 

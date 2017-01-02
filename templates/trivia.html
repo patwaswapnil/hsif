@@ -1,44 +1,39 @@
 <ion-view>
- <ion-nav-title>HSIF 2016</ion-nav-title>
+ <ion-nav-title>{{topheader}}</ion-nav-title>
   <ion-content>
-  <div class="banner home">
-  	<img src="img/banner.jpg"  alt="" />
-  </div>
-  <div class="clearfix"></div>
-  <div class="row">
-    <div class="col col-40 mt10">
-    <img src="img/logo-dark.png"  alt="" />
-    </div>
-    <div class="col col-20"></div>
-    <div class="col col-40 txtright">
-   <img src="img/times-network-logo.png"  alt="" />
-    </div>
-  </div>
+        <div class="banner">
+            <img src="http://times-hitachi.cruxservers.in/wp-content/uploads/2016/11/banner.jpg" alt="" />
+        </div>
+        <div class="row">
+            <div class="col col-40 mt10">
+                <img src="http://times-hitachi.cruxservers.in/wp-content/uploads/2016/12/logo-dark.png" alt="" />
+            </div>
+            <div class="col col-20"></div>
+            <div class="col col-40 txtright">
+                <img src="http://times-hitachi.cruxservers.in/wp-content/uploads/2016/12/times-network-logo.png" alt="" />
+            </div>
+        </div>
+
+
   <div class="pageHead">
     <div class="row">
-      <div class="col col-100"><h3 class="ptitle txtleft"><span>Trivia</span></h3></div>
+      <div class="col col-100"><h3 class="ptitle txtleft"><span>{{pagehead}}</span></h3></div>
       
     </div>
   </div>
 
 
-
-    <div class="Ncontent">
-         <ul class="tabview">
-            <li ng-repeat="tab in tabs" 
-                ng-class="{active:isActiveTab(tab.url)}" 
-                ng-click="onClickTab(tab)"><span>{{tab.stitle}}</span></li>
-        </ul>
-        <div id="mainView">
-            <div ng-include="currentTab"></div>
+  <ul class="tabview">
+        <li ng-repeat="tab in sdata" ng-class="{active:isActiveTab(tab.post_title)}" ng-click="onClickTab(tab.post_title)"><span>{{tab.post_title}}</span></li>
+    </ul>
+<div class="Ncontent">
+  
+    <div id="mainView" class="staticontent">
+        <div  ng-repeat="tab in sdata" ng-if="tab.post_title == activebtn">
+            <div ng-bind-html="tab.post_content"></div>
         </div>
-
-
-
-
-
-
     </div>
+</div>
   </ion-content>
 
 <div class="bar-footer">

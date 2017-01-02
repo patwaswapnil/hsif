@@ -11,7 +11,7 @@
     width: 100%;
     }
     .bggrey{background: #eee;}
-
+.clr{clear: both; padding: 0; margin:0;}
     .triviatexr span{font-size: 18px;     line-height: 24px;
 }
 .triviatexr .col{padding-bottom: 0;}
@@ -19,7 +19,8 @@
       
     }
     .pageHead .row{padding-top: 0;}
-    .pageHead h3.ptitle{color: #000; margin-bottom: 0;     margin-top: 10px;}
+    .pageHead h3.ptitle{color: #000; margin-bottom: 0;   margin-top: 10px;
+    margin-bottom: 10px;}
     .pageHead h3.ptitle span{    font-size: 20px;
     	border-bottom: 3px #ff0126 solid;
     font-weight: normal;
@@ -157,7 +158,8 @@ p.prtext span{font-weight: bold; display: block; font-size: 13px;}
    border:1px #eee solid; padding: 3px 17px;
 }
 
-
+.topinteractive .item{background: #f1f1f1;}
+.lgcircl{width: 50px; height: 50px; border-radius: 50%; float: left; display: inline-block;text-align: center; background: #fff; line-height: 50px; margin-right: 15px; font-size: 20px;}
 
 .cradiolabel{margin:20px 0 15px 0;}
 h5, .h5 {
@@ -173,6 +175,8 @@ h5, .h5 {
 .fgreen{color:green;}
 form[name="register"] small{padding-right: 10px;}
 .curpoint{cursor: pointer;}
+.cbrd{border: 1px #ccc solid;}
+/*.ccard{width: 50%; float: left;}*/
 .schedulecard{}
 .schedulecard .item{
     font-size: 14px;
@@ -196,10 +200,12 @@ form[name="register"] small{padding-right: 10px;}
     .colist ol li:first-child{border-top: 1px #ddd solid;}
 marquee p{display: inline-block; font-size: 14px; margin:0; padding:0;}
 .ccard{margin:20px 0;}
+
 .cradio.plist{min-height: 40px; position: relative;}
 .ccard .item-divider{padding: 15px 10px;}
 .cradio.plist .item-radio .item-content{    padding: 5px 10px 5px 43px;}
 .cradio.plist .radio-content:before,.cradio.plist .item-radio .radio-icon{height: 40px;}
+
 .ccolr{background: #ff0126 !important; background-image:none !important;}
 .sessioname{    font-size: 14px;
     font-weight: normal;}
@@ -231,6 +237,63 @@ marquee p{display: inline-block; font-size: 14px; margin:0; padding:0;}
     box-shadow: 0 -1px 0 #06b12e; cursor: pointer;
 }
 .errort{color:#f00; font-size: 13px;}
+.succmsg h4{color:green; margin:0;}
+.headtab{    
+    margin-top: 44px;
+    z-index: 999;
+    position: fixed;
+    width: 100%;
+    box-shadow: 0 0 6px #ccc;
+    background: #fff;
+  }
+
+ .headtab .tabview li{height: 45px; border:0;}
+.mt90{margin-top: 90px;}
+.bgwhite{background: #fff;}
+
+
+ .headtab .tabview li.active {
+    /* background: #ff0126; */
+    background: inherit;
+    color: #f00;
+    box-shadow: 0 -3px 0 #f00 inset;
+}
+.unread{background: #f8f8f8; position: relative;}
+.unread .count,.count{width: 23px;
+    height: 23px;
+    border-radius: 50%;
+    background: #f00;
+    text-align: center;
+    line-height: 23px;
+    font-size: 12px;
+    font-weight: bold;
+    position: absolute;
+    top: 33%;
+    right: 20px;
+    color: #fff;}
+.hicon{    font-size: 25px;
+    padding-top: 5px;
+    margin-right: 10px; display: block; color: #fff;}
+.hicon .count{
+   top: 4%;
+}
+.chatlisting .ulist{font-size: 19px;}
+.chatlisting .ulist small{font-size: 13px;}
+    .ionic_ratings .icon {
+        font-size: 40px;
+    }
+
+
+.p0{padding: 0;}
+.cmenu a.item-content{ font-weight: 350; }
+.cmenu i{ padding-right: 5px;  }
+.respmsg{color: #f00;}
+
+
+
+
+
+
 
 
 /*Chat css start*/
@@ -336,20 +399,48 @@ min-width: 180px;
 
 /* end of Chat css start*/
 
-/***************** WP8 */
-@viewport
-{
-width:350px;
-}
 
-@-ms-viewport {
-width:350px;
-zoom-user:fixed;
-max-zoom:1;
-min-zoom:1;
-}
-body, html {
-  -ms-overflow-style: none !important;
-}
 
 /***************** */
+
+/* Style the list */
+ul.tab {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+}
+
+/* Float the list items side by side */
+ul.tab li {float: left;}
+
+/* Style the links inside the list items */
+ul.tab li a {
+    display: inline-block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    transition: 0.3s;
+    font-size: 17px;
+}
+
+/* Change background color of links on hover */
+ul.tab li a:hover {background-color: #ddd;}
+
+/* Create an active/current tablink class */
+ul.tab li a:focus, .active {background-color: #ccc;}
+
+/* Style the tab content */
+.Ntabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+}
+.Ntabcontent {
+    -webkit-animation: fadeEffect 1s;
+    animation: fadeEffect 1s; /* Fading effect takes 1 second */
+}
