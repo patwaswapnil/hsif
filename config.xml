@@ -9,6 +9,7 @@
     <preference name="fullscreen" value="true" /> 
     <!-- versionCode is optional and Android only -->
     <platform name="winphone" />
+        <platform name="ios" />
     <author>Infini Systems Pvt Ltd</author>
     <preference name="windows-identity-name" value="InfiniSystemsPvtLtd.HSIF2016India" />
     <!-- Windows 8.1: -->
